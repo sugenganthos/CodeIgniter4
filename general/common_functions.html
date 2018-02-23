@@ -351,7 +351,7 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 
 <dl class="function">
 <dt id="old">
-<code class="descname">old</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#old" title="Permalink to this definition">¶</a></dt>
+<code class="descname">old</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$default = null</em><span class="optional">[</span>, <em>$escape = 'html'</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#old" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -359,6 +359,7 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – The name of the old form data to check for.</li>
 <li><strong>$default</strong> (<em>mixed</em>) – The default value to return if $key doesn’t exist.</li>
+<li><strong>$escape</strong> (<em>mixed</em>) – An <a class="reference external" href="#esc">escape</a> context or false to disable it.</li>
 </ul>
 </td>
 </tr>
@@ -386,6 +387,11 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 </div>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using the <a class="reference internal" href="../helpers/form_helper.html"><span class="doc">form helper</span></a>, this feature is built-in. You only
+need to use this function when not using the form helper.</p>
+</div>
 <dl class="function">
 <dt id="session">
 <code class="descname">session</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#session" title="Permalink to this definition">¶</a></dt>
@@ -889,7 +895,7 @@ instance every time.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Feb 23, 2018.
 
     </p>
   </div>
