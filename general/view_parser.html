@@ -567,128 +567,6 @@ left to right:</p>
 <div class="section" id="provided-filters">
 <h4>Provided Filters<a class="headerlink" href="#provided-filters" title="Permalink to this headline">¶</a></h4>
 <p>The following filters are available when using the parser:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="11%" />
-<col width="14%" />
-<col width="35%" />
-<col width="41%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Filter</th>
-<th class="head">Arguments</th>
-<th class="head">Description</th>
-<th class="head">Example</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>abs</td>
-<td>&#160;</td>
-<td>Displays the absolute value of a number.</td>
-<td>{ v|abs }</td>
-</tr>
-<tr class="row-odd"><td>capitalize</td>
-<td>&#160;</td>
-<td>Displays the string in sentence case: all lowercase with first
-letter capitalized.</td>
-<td>{ v|capitalize}</td>
-</tr>
-<tr class="row-even"><td>date</td>
-<td>format (Y-m-d)</td>
-<td>A PHP <strong>date</strong>-compatible formatting string.</td>
-<td>{ v|date(Y-m-d) }</td>
-</tr>
-<tr class="row-odd"><td>date_modify</td>
-<td>value to add/subtract</td>
-<td>A <strong>strtotime</strong> compatible string to modify the date, like
-<code class="docutils literal"><span class="pre">+5</span> <span class="pre">day</span></code> or <code class="docutils literal"><span class="pre">-1</span> <span class="pre">week</span></code>.</td>
-<td>{ v|date_modify(+1 day) }</td>
-</tr>
-<tr class="row-even"><td>default</td>
-<td>default value</td>
-<td>Displays the default value if the variable is empty or undefined.</td>
-<td>{ v|default(just in case) }</td>
-</tr>
-<tr class="row-odd"><td>esc</td>
-<td>html, attr, css, js</td>
-<td>Specifies the context to escape the data.</td>
-<td>{ v|esc(attr) }</td>
-</tr>
-<tr class="row-even"><td>excerpt</td>
-<td>phrase, radius</td>
-<td>Returns the text within a radius of words from a given phrase.
-Same as <strong>excerpt</strong> helper function.</td>
-<td>{ v|excerpt(green giant, 20) }</td>
-</tr>
-<tr class="row-odd"><td>highlight</td>
-<td>phrase</td>
-<td><dl class="first last docutils">
-<dt>Highlights a given phrase within the text using ‘&lt;mark&gt;&lt;/mark&gt;’</dt>
-<dd>tags.</dd>
-</dl>
-</td>
-<td>{ v|highlight(view parser) }</td>
-</tr>
-<tr class="row-even"><td>highlight_code</td>
-<td>&#160;</td>
-<td>Highlights code samples with HTML/CSS.</td>
-<td>{ v|highlight_code }</td>
-</tr>
-<tr class="row-odd"><td>limit_chars</td>
-<td>limit</td>
-<td>Limits the number of chracters to $limit.</td>
-<td>{ v|limit_chars(100) }</td>
-</tr>
-<tr class="row-even"><td>limit_words</td>
-<td>limit</td>
-<td>Limits the number of words to $limit.</td>
-<td>{ v|limit_words(20) }</td>
-</tr>
-<tr class="row-odd"><td>lower</td>
-<td>&#160;</td>
-<td>Converts a string to lowercase.</td>
-<td>{ v|lower }</td>
-</tr>
-<tr class="row-even"><td>nl2br</td>
-<td>&#160;</td>
-<td>Replaces all newline characters (n) to an HTML &lt;br/&gt; tag.</td>
-<td>{ v|nl2br }</td>
-</tr>
-<tr class="row-odd"><td>number_format</td>
-<td>places</td>
-<td>Wraps PHP <strong>number_format</strong> function for use within the parser.</td>
-<td>{ v|number_format(3) }</td>
-</tr>
-<tr class="row-even"><td>prose</td>
-<td>&#160;</td>
-<td>Takes a body of text and uses the <strong>auto_typography()</strong> method to
-turn it into prettier, easier-to-read, prose.</td>
-<td>{ v|prose }</td>
-</tr>
-<tr class="row-odd"><td>round</td>
-<td>places, type</td>
-<td>Rounds a number to the specified places. Types of <strong>ceil</strong> and
-<strong>floor</strong> can be passed to use those functions instead.</td>
-<td>{ v|round(3) } { v|round(ceil) }</td>
-</tr>
-<tr class="row-even"><td>strip_tags</td>
-<td>allowed chars</td>
-<td>Wraps PHP <strong>strip_tags</strong>. Can accept a string of allowed tags.</td>
-<td>{ v|strip_tags(&lt;br&gt;) }</td>
-</tr>
-<tr class="row-odd"><td>title</td>
-<td>&#160;</td>
-<td>Displays a “title case” version of the string, with all lowercase,
-and each word capitalized.</td>
-<td>{ v|title }</td>
-</tr>
-<tr class="row-even"><td>upper</td>
-<td>&#160;</td>
-<td>Displays the string in all uppercase.</td>
-<td>{ v|upper }</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section" id="custom-filters">
 <h4>Custom Filters<a class="headerlink" href="#custom-filters" title="Permalink to this headline">¶</a></h4>
@@ -1124,7 +1002,7 @@ substitutions are performed for each data pair.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Feb 27, 2018.
 
     </p>
   </div>
