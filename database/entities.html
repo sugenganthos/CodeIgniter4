@@ -252,7 +252,7 @@ Entity itself at <strong>application/Entities/User.php</strong>.</p>
     <span class="k">protected</span> <span class="nv">$email</span><span class="p">;</span>
     <span class="k">protected</span> <span class="nv">$password</span><span class="p">;</span>
     <span class="k">protected</span> <span class="nv">$created_at</span><span class="p">;</span>
-    <span class="k">protected</span> <span class="nv">$updated_on</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$updated_at</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -278,7 +278,7 @@ database columns are represented in the Entity. This is required for the Model t
 </pre></div>
 </div>
 <p>The model uses the <code class="docutils literal"><span class="pre">users</span></code> table in the database for all of its activities. We’ve set the <code class="docutils literal"><span class="pre">$allowedFields</span></code> property
-to include all of the fields that we want outside classes to change. The <code class="docutils literal"><span class="pre">id</span></code>, <code class="docutils literal"><span class="pre">created_at</span></code>, and <code class="docutils literal"><span class="pre">updated_on</span></code> fields
+to include all of the fields that we want outside classes to change. The <code class="docutils literal"><span class="pre">id</span></code>, <code class="docutils literal"><span class="pre">created_at</span></code>, and <code class="docutils literal"><span class="pre">updated_at</span></code> fields
 are handled automatically by the class or the database, so we don’t want to change those. Finally, we’ve set our Entity
 class as the <code class="docutils literal"><span class="pre">$returnType</span></code>. This ensures that all methods on the model that return rows from the database will return
 instances of our User Entity class instead of an object or array like normal.</p>
@@ -573,7 +573,7 @@ you can cast properties into, the <strong>array</strong> cast type will serializ
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Mar 26, 2018.
 
     </p>
   </div>

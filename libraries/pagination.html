@@ -109,6 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="content_negotiation.html">Content Negotiation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
@@ -124,6 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">Working with URIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validation.html">Validation</a></li>
 </ul>
 </li>
@@ -293,6 +295,21 @@ sections.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="paginating-with-only-expected-queries">
+<h3>Paginating with Only Expected Queries<a class="headerlink" href="#paginating-with-only-expected-queries" title="Permalink to this headline">¶</a></h3>
+<p>By default all GET queries are shown in the pagination links.</p>
+<p>For example, when accessing the URL <em>http://domain.tld?search=foo&amp;order=asc&amp;hello=i+am+here&amp;page=2</em>, the page 3 link can be generated, along with the other links, as follows:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$pager</span><span class="o">-&gt;</span><span class="na">links</span><span class="p">();</span>
+<span class="c1">// Page 3 link: http://domain.tld?search=foo&amp;order=asc&amp;hello=i+am+here&amp;page=3</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">only()</span></code> method allows you to limit this just to queries already expected:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$pager</span><span class="o">-&gt;</span><span class="na">only</span><span class="p">([</span><span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span><span class="p">])</span><span class="o">-&gt;</span><span class="na">links</span><span class="p">();</span>
+<span class="c1">// Page 3 link: http://domain.tld?search=foo&amp;order=asc&amp;page=3</span>
+</pre></div>
+</div>
+<p>The <em>page</em> query is enabled by default. And <code class="docutils literal"><span class="pre">only()</span></code> acts in all pagination links.</p>
+</div>
 </div>
 <div class="section" id="customizing-the-links">
 <h2>Customizing the Links<a class="headerlink" href="#customizing-the-links" title="Permalink to this headline">¶</a></h2>
@@ -440,7 +457,7 @@ title, which is just the number, and a boolean that tells whether the link is th
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Mar 26, 2018.
 
     </p>
   </div>

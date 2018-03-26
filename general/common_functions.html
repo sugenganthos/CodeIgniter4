@@ -383,6 +383,8 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 
 <span class="c1">// In the view</span>
 <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?= old(&#39;email&#39;) ?&gt;&quot;</span><span class="o">&gt;</span>
+<span class="c1">// Or with arrays</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;user[email]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?= old(&#39;user.email&#39;) ?&gt;&quot;</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -895,7 +897,7 @@ instance every time.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Feb 23, 2018.
+      Last updated on Mar 26, 2018.
 
     </p>
   </div>
