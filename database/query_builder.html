@@ -681,7 +681,7 @@ Submit the table name in the first parameter. Example:</p>
 <p>Query grouping allows you to create groups of WHERE clauses by enclosing them in parentheses. This will allow
 you to create queries with complex WHERE clauses. Nested groups are supported. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">group_start</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="na">groupStart</span><span class="p">()</span>
                 <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
                 <span class="o">-&gt;</span><span class="na">orGroupStart</span><span class="p">()</span>
                         <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
@@ -697,7 +697,7 @@ you to create queries with complex WHERE clauses. Nested groups are supported. E
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">groups need to be balanced, make sure every group_start() is matched by a group_end().</p>
+<p class="last">groups need to be balanced, make sure every groupStart() is matched by a groupEnd().</p>
 </div>
 <p><strong>$builder-&gt;groupStart()</strong></p>
 <p>Starts a new group by adding an opening parenthesis to the WHERE clause of the query.</p>
@@ -2282,7 +2282,7 @@ a DELETE statement will be used instead.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Apr 04, 2018.
 
     </p>
   </div>
