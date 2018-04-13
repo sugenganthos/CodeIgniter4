@@ -414,8 +414,8 @@ instead of the word versions (<strong>OR</strong> and <strong>AND</strong>).</p>
 <li><p class="first">It avoids the problem of the assignment operator (<strong>=</strong>) having
 higher precedence:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$result</span> <span class="o">=</span> <span class="k">true</span> <span class="o">&amp;&amp;</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// $result is false, expected</span>
-<span class="nv">$result</span> <span class="o">=</span> <span class="k">true</span> <span class="k">OR</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// $result is true, evaluated as &quot;($result = true) OR false&quot;</span>
-<span class="nv">$result</span> <span class="o">=</span> <span class="p">(</span><span class="k">true</span> <span class="k">OR</span> <span class="k">false</span><span class="p">);</span> <span class="c1">// $result is false</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="k">true</span> <span class="k">AND</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// $result is true, evaluated as &quot;($result = true) AND false&quot;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="p">(</span><span class="k">true</span> <span class="k">AND</span> <span class="k">false</span><span class="p">);</span> <span class="c1">// $result is false</span>
 </pre></div>
 </div>
 </li>
@@ -510,7 +510,7 @@ We use “Allman style” notation instead.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Apr 13, 2018.
 
     </p>
   </div>
