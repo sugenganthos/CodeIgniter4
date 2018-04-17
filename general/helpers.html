@@ -230,9 +230,14 @@ global <em>system/Helpers/</em> directory.</p>
 </div>
 <p>Where <strong>name</strong> is the file name of the helper, without the .php file
 extension or the “helper” part.</p>
-<p>For example, to load the <strong>URL Helper</strong> file, which is named
-<strong>url_helper.php</strong>, you would do this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+<p>For example, to load the <strong>Cookie Helper</strong> file, which is named
+<strong>cookie_helper.php</strong>, you would do this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;cookie&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you need to load more than one helper at a time, you can pass
+an array of file names in and all of them will be loaded:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">helper</span><span class="p">([</span><span class="s1">&#39;cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>A helper can be loaded anywhere within your controller methods (or
@@ -245,6 +250,10 @@ it.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The Helper loading method above does not return a value, so
 don’t try to assign it to a variable. Just use it as shown.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The URL helper is always loaded so you do not need to load it yourself.</p>
 </div>
 <div class="section" id="loading-from-non-standard-locations">
 <h3>Loading from Non-standard Locations<a class="headerlink" href="#loading-from-non-standard-locations" title="Permalink to this headline">¶</a></h3>
@@ -357,7 +366,7 @@ Files. Browse each one to see what they do.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Apr 17, 2018.
 
     </p>
   </div>
