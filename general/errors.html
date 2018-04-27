@@ -237,7 +237,7 @@ not child classes of the caught exception will be passed on to the error handler
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This can be handy for handling the error yourself, or for performaing cleanup before the script ends. If you want
+<p>This can be handy for handling the error yourself, or for performing cleanup before the script ends. If you want
 the error handler to function as normal, you can throw a new exception within the catch block:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">catch</span> <span class="p">(</span><span class="nx">\CodeIgniter\UnknownFileException</span> <span class="nv">$e</span><span class="p">)</span>
 <span class="p">{</span>
@@ -292,7 +292,7 @@ If, in <code class="docutils literal"><span class="pre">Config/Routes.php</span>
 404 page:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$pageModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">))</span>
 <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\PageNotFoundException</span><span class="p">();</span>
+        <span class="k">throw</span> <span class="nx">\CodeIgniter\ExceptionsPageNotFoundException</span><span class="o">::</span><span class="na">forPageNotFound</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -302,42 +302,10 @@ If, in <code class="docutils literal"><span class="pre">Config/Routes.php</span>
 <h3>ConfigException<a class="headerlink" href="#configexception" title="Permalink to this headline">¶</a></h3>
 <p>This exception should be used when the values from the configuration class are invalid, or when the config class
 is not the right type, etc:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\ConfigException</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Exceptions\ConfigException</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>This provides an HTTP status code of 500, and an exit code of 3.</p>
-</div>
-<div class="section" id="unknownfileexception">
-<h3>UnknownFileException<a class="headerlink" href="#unknownfileexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when a file cannot be found:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UnknownFileException</span><span class="p">();</span>
-</pre></div>
-</div>
-<p>This provides an HTTP status code of 500, and an exit code of 4.</p>
-</div>
-<div class="section" id="unknownclassexception">
-<h3>UnknownClassException<a class="headerlink" href="#unknownclassexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when a class cannot be found:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UnknownClassException</span><span class="p">(</span><span class="nv">$className</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>This provides an HTTP status code of 500, and an exit code of 5.</p>
-</div>
-<div class="section" id="unknownmethodexception">
-<h3>UnknownMethodException<a class="headerlink" href="#unknownmethodexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when a class’ method does not exist:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UnknownMethodException</span><span class="p">();</span>
-</pre></div>
-</div>
-<p>This provides an HTTP status code of 500, and an exit code of 6.</p>
-</div>
-<div class="section" id="userinputexception">
-<h3>UserInputException<a class="headerlink" href="#userinputexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when the user’s input is not valid:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UserInputException</span><span class="p">();</span>
-</pre></div>
-</div>
-<p>This provides an HTTP status code of 500, and an exit code of 7.</p>
 </div>
 <div class="section" id="databaseexception">
 <h3>DatabaseException<a class="headerlink" href="#databaseexception" title="Permalink to this headline">¶</a></h3>
@@ -374,7 +342,7 @@ or when it is temporarily lost:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jan 10, 2018.
+      Last updated on Apr 26, 2018.
 
     </p>
   </div>
