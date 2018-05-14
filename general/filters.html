@@ -217,9 +217,10 @@ and power. Some common examples of tasks that might be performed with filters ar
 </ul>
 <div class="section" id="creating-a-filter">
 <h2>Creating a Filter<a class="headerlink" href="#creating-a-filter" title="Permalink to this headline">¶</a></h2>
-<p>Filters are simple classes that implement <code class="docutils literal"><span class="pre">CodeIgniter\Filters\FilterInterface</span></code>. They contain two methods: <code class="docutils literal"><span class="pre">before()</span></code>
-and <code class="docutils literal"><span class="pre">after()</span></code>, which contain the code that will be ran before and after the controller, respectively. Your class
-must contain both methods, but may leave the methods empty if they are not needed. A skeleton filter class looks like:</p>
+<p>Filters are simple classes that implement <code class="docutils literal"><span class="pre">CodeIgniter\Filters\FilterInterface</span></code>.
+They contain two methods: <code class="docutils literal"><span class="pre">before()</span></code> and <code class="docutils literal"><span class="pre">after()</span></code> which hold the code that
+will run before and after the controller respectively. Your class must contain both methods
+but may leave the methods empty if they are not needed. A skeleton filter class looks like:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">namespace</span> <span class="nx">App\Filters</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">CodeIgniter\HTTP\RequestInterface</span><span class="p">;</span>
@@ -393,7 +394,7 @@ a list of URI patterns that filter should apply to:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on May 13, 2018.
 
     </p>
   </div>
