@@ -308,16 +308,16 @@ the views. Modify the <code class="docutils literal"><span class="pre">index()</
                 <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;News archive&#39;</span><span class="p">,</span>
         <span class="p">];</span>
 
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Templates/Header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;News/Index&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Templates/Footer&#39;</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;news/index&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>The code above gets all news records from the model and assigns it to a
 variable. The value for the title is also assigned to the <code class="docutils literal"><span class="pre">$data['title']</span></code>
 element and all data is passed to the views. You now need to create a
-view to render the news items. Create <em>application/Views/News/Index.php</em>
+view to render the news items. Create <em>application/Views/news/index.php</em>
 and add the next piece of code.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;&lt;?=</span> <span class="nv">$title</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
@@ -365,16 +365,16 @@ add some code to the controller and create a new view. Go back to the
 
         <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">];</span>
 
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Templates/Header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;News/View&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Templates/Footer&#39;</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;news/view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Instead of calling the <code class="docutils literal"><span class="pre">getNews()</span></code> method without a parameter, the
 <code class="docutils literal"><span class="pre">$slug</span></code> variable is passed, so it will return the specific news item.
 The only things left to do is create the corresponding view at
-<em>application/Views/News/View.php</em>. Put the following code in this file.</p>
+<em>application/Views/news/view.php</em>. Put the following code in this file.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">echo</span> <span class="s1">&#39;&lt;h2&gt;&#39;</span><span class="o">.</span><span class="nv">$news</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="s1">&#39;&lt;/h2&gt;&#39;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nv">$news</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">];</span>
@@ -422,7 +422,7 @@ watch your news page.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on May 16, 2018.
 
     </p>
   </div>
