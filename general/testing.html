@@ -365,7 +365,7 @@ into your controller.</p>
 <p>If you do not provide one, a new Response instance with the default application values will be passed
 into your controller.</p>
 <p><strong>withURI($uri)</strong></p>
-<p>Allows you to provide a new URI that simulates the URL the client was visiting when this controller was run.
+<p>Allows you to provide a new URI that simulates the URL the client was visiting when this controller was ran.
 This is helpful if you need to check URI segments within your controller. The only parameter is a string
 representing a valid URI:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$results</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">withURI</span><span class="p">(</span><span class="s1">&#39;http://example.com/forums/categories&#39;</span><span class="p">)</span>
@@ -511,7 +511,7 @@ tests must extend <code class="docutils literal"><span class="pre">\CIDatabaseTe
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Because special functionality executed during the <code class="docutils literal"><span class="pre">setUp()</span></code> and <code class="docutils literal"><span class="pre">tearDown()</span></code> phases, you must ensure
+<p>Because special functionality is ran during the <code class="docutils literal"><span class="pre">setUp()</span></code> and <code class="docutils literal"><span class="pre">tearDown()</span></code> phases, you must ensure
 that you call the parent’s methods if you need to use those methods, otherwise you will lose much
 of the functionality described here.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">\CIDatabaseTestCase</span>
@@ -565,7 +565,7 @@ by adding a couple of class properties to your test.</p>
 <p>This boolean value determines whether the database is completely refreshed before every test. If true,
 all migrations are rolled back to version 0, then the database is migrated to the latest available migration.</p>
 <p><strong>$seed</strong></p>
-<p>If present and not empty, this specifies the name of a Seed file that is used to populate the database with
+<p>If present and not empty, this specifies the name of a Seed file that is ran to populate the database with
 test data prior to every test running.</p>
 <p><strong>$basePath</strong></p>
 <p>By default, CodeIgniter will look in <strong>tests/_support/database/migrations</strong> and <strong>tests/_support_database/seeds</strong>

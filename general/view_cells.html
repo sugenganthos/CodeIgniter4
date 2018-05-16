@@ -204,18 +204,18 @@
   <div class="section" id="view-cells">
 <h1>View Cells<a class="headerlink" href="#view-cells" title="Permalink to this headline">¶</a></h1>
 <p>View Cells allow you to insert HTML that is generated outside of your controller. It simply calls the specified
-class and method, which must return a string of valid HTML. This method could be in any callable method, found in any class
+class and method, which must return valid HTML. This method could be in an callable method, found in any class
 that the autoloader can locate. The only restriction is that the class can not have any constructor parameters.
 This is intended to be used within views, and is a great aid to modularizing your code.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?=</span> <span class="nx">view_cell</span><span class="p">(</span><span class="s1">&#39;\App\Libraries\Blog::recentPosts&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>In this example, the class <code class="docutils literal"><span class="pre">App\Libraries\Blog</span></code> is loaded, and the method <code class="docutils literal"><span class="pre">recentPosts()</span></code> is run. The method
-must return the generated HTML as a string. The method can be either a static method or not. Either way works.</p>
+<p>In this example, the class <code class="docutils literal"><span class="pre">App\Libraries\Blog</span></code> is loaded, and the method <code class="docutils literal"><span class="pre">recentPosts()</span></code> is ran. That method
+must return a string with the generated HTML. The method used can be either a static method or not. Either way works.</p>
 <div class="section" id="cell-parameters">
 <h2>Cell Parameters<a class="headerlink" href="#cell-parameters" title="Permalink to this headline">¶</a></h2>
-<p>You can further refine the call by passing a list of parameters in the second parameter to the method. The values passed
-can be an array of key/value pairs, or a comma-separated string of key/value pairs:</p>
+<p>You can further refine the call by passing a string with a list of parameters in the second parameter that are passed
+to the method as an array of key/value pairs, or a comma-separated string of key/value pairs:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Passing Parameter Array</span>
 <span class="o">&lt;?=</span> <span class="nx">view_cell</span><span class="p">(</span><span class="s1">&#39;\App\Libraries\Blog::recentPosts&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;category&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;codeigniter&#39;</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">])</span> <span class="cp">?&gt;</span>
 
