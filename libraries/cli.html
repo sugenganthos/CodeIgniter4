@@ -414,6 +414,19 @@ pass <code class="docutils literal"><span class="pre">false</span></code> as the
 +----+--------------------------+---------------------+--------+
 </pre></div>
 </div>
+<p><strong>wait()</strong></p>
+<p>Waits a certain number of seconds, optionally showing a wait message and
+waiting for a key press.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// wait for specified interval, with countdown displayed</span>
+<span class="nx">CLI</span><span class="o">::</span><span class="na">wait</span><span class="p">(</span><span class="nv">$seconds</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+
+<span class="c1">// show continuation message and wait for input</span>
+<span class="nx">CLI</span><span class="o">::</span><span class="na">wait</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+<span class="c1">// wait for specified interval</span>
+<span class="nx">CLI</span><span class="o">::</span><span class="na">wait</span><span class="p">(</span><span class="nv">$seconds</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -440,7 +453,7 @@ pass <code class="docutils literal"><span class="pre">false</span></code> as the
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on May 20, 2018.
 
     </p>
   </div>
