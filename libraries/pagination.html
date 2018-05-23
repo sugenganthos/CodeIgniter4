@@ -334,12 +334,12 @@ the view file through it’s namespace:</p>
 </pre></div>
 </div>
 <p>Since it is under the standard <strong>application/Views</strong> directory, though, you do not need to namespace it since the
-<code class="docutils literal"><span class="pre">view()</span></code> method will locate. In that case, you can simple give the sub-directory and file name:</p>
+<code class="docutils literal"><span class="pre">view()</span></code> method can locate it by filename. In that case, you can simple give the sub-directory and file name:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s1">&#39;default_full&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Pagers/foundation_full&#39;</span><span class="p">,</span>
 </pre></div>
 </div>
 <p>Once you have created the view and set it in the configuration, it will automatically be used. You don’t have to
-just replace the existing templates. You can create as many additional templates as you need in the configuration
+replace the existing templates. You can create as many additional templates as you need in the configuration
 file. A common situation would be needing different styles for the frontend and the backend of your application.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$templates</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;default_full&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;CodeIgniter\Pager\Views\default_full&#39;</span><span class="p">,</span>
@@ -359,7 +359,7 @@ methods:</p>
 <div class="section" id="creating-the-view">
 <h3>Creating the View<a class="headerlink" href="#creating-the-view" title="Permalink to this headline">¶</a></h3>
 <p>When you create a new view, you only need to create the code that is needed for creating the pagination links themselves.
-You should never create unnecessary wrapping divs since it might be used in multiple places and you only limit their
+You should not create unnecessary wrapping divs since it might be used in multiple places and you only limit their
 usefulness. It is easiest to demonstrate creating a new view by showing you the existing default_full template:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="nv">$pager</span><span class="o">-&gt;</span><span class="na">setSurroundCount</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="cp">?&gt;</span>
 
@@ -405,19 +405,16 @@ usefulness. It is easiest to demonstrate creating a new view by showing you the 
 <p><strong>setSurroundCount()</strong></p>
 <p>In the first line, the <code class="docutils literal"><span class="pre">setSurroundCount()</span></code> method specifies that we want to show two links to either side of
 the current page link. The only parameter that it accepts is the number of links to show.</p>
-<p><strong>hasPrevious()</strong>
-<strong>hasNext()</strong></p>
-<p>These methods return a boolean true if it has more links than can be displayed on either side of the current page,
+<p><strong>hasPrevious()</strong> &amp; <strong>hasNext()</strong></p>
+<p>These methods return a boolean true if there are more links than can be displayed on either side of the current page,
 based on the value passed to <code class="docutils literal"><span class="pre">setSurroundCount</span></code>. For example, let’s say we have 20 pages of data. The current
 page is page 3. If the surround count is 2, then the following links would show up in the list: 1, 2, 3, 4, and 5.
 Since the first link displayed is page one, <code class="docutils literal"><span class="pre">hasPrevious()</span></code> would return <strong>false</strong> since there is no page zero. However,
 <code class="docutils literal"><span class="pre">hasNext()</span></code> would return <strong>true</strong> since there are 15 additional pages of results after page five.</p>
-<p><strong>getPrevious()</strong>
-<strong>getNext()</strong></p>
+<p><strong>getPrevious()</strong> &amp; <strong>getNext()</strong></p>
 <p>These methods return the URL for the previous or next pages of results on either side of the numbered links. See the
 previous paragraph for a full explanation.</p>
-<p><strong>getFirst()</strong>
-<strong>getLast()</strong></p>
+<p><strong>getFirst()</strong> &amp; <strong>getLast()</strong></p>
 <p>Much like <code class="docutils literal"><span class="pre">getPrevious()</span></code> and <code class="docutils literal"><span class="pre">getNext()</span></code>, these methods return links to the first and last pages in the
 result set.</p>
 <p><strong>links()</strong></p>
@@ -457,7 +454,7 @@ title, which is just the number, and a boolean that tells whether the link is th
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on May 23, 2018.
 
     </p>
   </div>
