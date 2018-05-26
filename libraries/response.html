@@ -250,6 +250,18 @@ as the second parameter of the <code class="docutils literal"><span class="pre">
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;Nope. Not here.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>You can set format an array into either JSON or XML and set the content type header to the appropriate mime with the
+<code class="docutils literal"><span class="pre">setJSON</span></code> and <code class="docutils literal"><span class="pre">setXML</span></code> methods. Typically, you will send an array of data to be converted:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;success&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">123</span>
+<span class="p">];</span>
+
+<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setJSON</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+        <span class="k">or</span>
+<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setXML</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="setting-headers">
 <h3><a class="toc-backref" href="#id4">Setting Headers</a><a class="headerlink" href="#setting-headers" title="Permalink to this headline">¶</a></h3>
@@ -763,7 +775,7 @@ parameters:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on May 25, 2018.
 
     </p>
   </div>
