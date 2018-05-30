@@ -1104,19 +1104,19 @@ kilobytes (kb).</td>
 </tr>
 <tr class="row-even"><td>max_dims</td>
 <td>Yes</td>
-<td>Files if the maximum width and height of an uploaded image exceeds values. The first parameter
+<td>Fails if the maximum width and height of an uploaded image exceed values. The first parameter
 is the field name. The second is the width, and the third is the height. Will also fail if
 the file cannot be determined to be an image.</td>
 <td>max_dims[field_name,300,150]</td>
 </tr>
 <tr class="row-odd"><td>mime_in</td>
 <td>Yes</td>
-<td>Fails if the file’s mime type is not one listed in the parameter.</td>
+<td>Fails if the file’s mime type is not one listed in the parameters.</td>
 <td>mime_in[field_name,image/png,image/jpg]</td>
 </tr>
 <tr class="row-even"><td>ext_in</td>
 <td>Yes</td>
-<td>Fails if the file’s extension is not one listed in the parameter.</td>
+<td>Fails if the file’s extension is not one listed in the parameters.</td>
 <td>ext_in[field_name,png,jpg,gif]</td>
 </tr>
 <tr class="row-odd"><td>is_image</td>
@@ -1159,7 +1159,7 @@ the field data).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 28, 2018.
+      Last updated on May 30, 2018.
 
     </p>
   </div>

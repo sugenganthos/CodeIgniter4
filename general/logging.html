@@ -300,7 +300,7 @@ file name and line number.  You must still provide the exception placeholder in 
 <span class="p">{</span>
         <span class="o">...</span> <span class="nx">Something</span> <span class="nx">throws</span> <span class="nx">error</span> <span class="nx">here</span>
 <span class="p">}</span>
-<span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="c1">#e)</span>
+<span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nx">log_message</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;[ERROR] {exception}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;exception&#39;</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]);</span>
 <span class="p">}</span>
@@ -385,7 +385,7 @@ still be able to log as it would expect, as long as it can find a PSR3 compatibl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on May 30, 2018.
 
     </p>
   </div>
