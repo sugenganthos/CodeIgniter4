@@ -494,28 +494,28 @@ data to be validated:</p>
 <h2><a class="toc-backref" href="#id14">Validating Keys that are Arrays</a><a class="headerlink" href="#validating-keys-that-are-arrays" title="Permalink to this headline">¶</a></h2>
 <p>If your data is in a nested associative array, you can use “dot array syntax” to
 easily validate your data:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// The data to test:
-&#39;contacts&#39; =&gt; [
-    &#39;name&#39; =&gt; &#39;Joe Smith&#39;,
-    &#39;friends&#39; =&gt; [
-        [
-            &#39;name&#39; =&gt; &#39;Fred Flinstone&#39;
-        ],
-        [
-            &#39;name&#39; =&gt; &#39;Wilma&#39;
-        ]
-    ]
-]
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// The data to test:</span>
+<span class="s1">&#39;contacts&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Joe Smith&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;friends&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fred Flinstone&#39;</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Wilma&#39;</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">]</span>
 
-// Joe Smith
-$validation-&gt;setRules([
-    &#39;contacts.name&#39; =&gt; &#39;required
-]);
+<span class="c1">// Joe Smith</span>
+<span class="nv">$validation</span><span class="o">-&gt;</span><span class="na">setRules</span><span class="p">([</span>
+    <span class="s1">&#39;contacts.name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+<span class="p">]);</span>
 
-// Fred Flintsone &amp; Wilma
-$validation-&gt;setRules([
-    &#39;contacts.friends.name&#39; =&gt; &#39;required&#39;
-]);
+<span class="c1">// Fred Flintsone &amp; Wilma</span>
+<span class="nv">$validation</span><span class="o">-&gt;</span><span class="na">setRules</span><span class="p">([</span>
+    <span class="s1">&#39;contacts.friends.name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+<span class="p">]);</span>
 </pre></div>
 </div>
 <p>You can use the ‘*’ wildcard symbol to match any one level of the array:</p>

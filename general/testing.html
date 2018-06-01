@@ -465,10 +465,10 @@ a tag, as specified by type, class, or id:</p>
 </pre></div>
 </div>
 <p>The <strong>dontSee()</strong> method is the exact opposite:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// Checks that &quot;Hello World&quot; does NOT exist on the page
-$results-&gt;dontSee(&#39;Hello World&quot;);
-// Checks that &quot;Hellow World&quot; does NOT exist within any h1 tag
-$results-&gt;dontSee(&#39;Hello World&#39;, &#39;h1&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Checks that &quot;Hello World&quot; does NOT exist on the page</span>
+<span class="nv">$results</span><span class="o">-&gt;</span><span class="na">dontSee</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+<span class="c1">// Checks that &quot;Hellow World&quot; does NOT exist within any h1 tag</span>
+<span class="nv">$results</span><span class="o">-&gt;</span><span class="na">dontSee</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="s1">&#39;h1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The <strong>seeElement()</strong> and <strong>dontSeeElement()</strong> are very similar to the previous methods, but do not look at the
@@ -511,51 +511,52 @@ values of the elements. Instead, they simply check that the elements exist on th
 <h4>CITestStreamFilter<a class="headerlink" href="#citeststreamfilter" title="Permalink to this headline">¶</a></h4>
 <p>This filter captures output and makes it available to you.</p>
 <p>An example demonstrating this inside one of your test cases:</p>
-<blockquote>
-<div><p>public function setUp()
-{</p>
-<blockquote>
-<div>CITestStreamFilter::$buffer = ‘’;
-$this-&gt;stream_filter = stream_filter_append(STDOUT, ‘CITestStreamFilter’);</div></blockquote>
-<p>}</p>
-<p>public function tearDown()
-{</p>
-<blockquote>
-<div>stream_filter_remove($this-&gt;stream_filter);</div></blockquote>
-<p>}</p>
-<p>public function testSomeOutput()
-{</p>
-<blockquote>
-<div>CLI::write(‘first.’);
-$expected = “first.n”;
-$this-&gt;assertEquals($expected, CITestStreamFilter::$buffer);</div></blockquote>
-<p>}</p>
-</div></blockquote>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stream_filter</span> <span class="o">=</span> <span class="nb">stream_filter_append</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s1">&#39;CITestStreamFilter&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nb">stream_filter_remove</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stream_filter</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">testSomeOutput</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;first.&#39;</span><span class="p">);</span>
+    <span class="nv">$expected</span> <span class="o">=</span> <span class="s2">&quot;first.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="additional-assertions">
 <h3><a class="toc-backref" href="#id12">Additional Assertions</a><a class="headerlink" href="#additional-assertions" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">CIUnitTestCase</span></code> provides additional unit testing assertions that you might find useful.</p>
 <p><strong>assertLogged($level, $expectedMessage)</strong></p>
-<p>Ensure that something you expected to be logged actually was.</p>
-<blockquote>
-<div><p>$config = new LoggerConfig();
-$logger = new Logger($config);</p>
-<p>… do something that you expect a log entry from
-$logger-&gt;log(‘error’, “That’s no moon”);</p>
-<p>$this-&gt;assertLogged(‘error’, “That’s no moon”);</p>
-</div></blockquote>
+<p>Ensure that something you expected to be logged actually was:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoggerConfig</span><span class="p">();</span>
+<span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
+
+<span class="o">...</span> <span class="k">do</span> <span class="nx">something</span> <span class="nx">that</span> <span class="nx">you</span> <span class="nx">expect</span> <span class="nx">a</span> <span class="nb">log</span> <span class="nx">entry</span> <span class="nx">from</span>
+<span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s2">&quot;That&#39;s no moon&quot;</span><span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertLogged</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s2">&quot;That&#39;s no moon&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
 <p><strong>assertEventTriggered($eventName)</strong></p>
 <p>Ensure that an event you excpected to be triggered actually was:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>Events::on(‘foo’, function($arg) use(&amp;$result) {</dt>
-<dd>$result = $arg;</dd>
-</dl>
-<p>});</p>
-<p>Events::trigger(‘foo’, ‘bar’);</p>
-<p>$this-&gt;assertEventTriggered(‘foo’);</p>
-</div></blockquote>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$arg</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">Events</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEventTriggered</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="testing-your-database">
