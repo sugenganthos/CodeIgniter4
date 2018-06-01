@@ -303,6 +303,43 @@ within the class, and, if not, creates a new one. All of the factory methods pro
 </pre></div>
 </div>
 </div>
+<div class="section" id="service-discovery">
+<h3>Service Discovery<a class="headerlink" href="#service-discovery" title="Permalink to this headline">¶</a></h3>
+<p>CodeIgniter can automatically discover any ConfigServices.php files you may have created within any defined namespaces.
+This allows simple use of any module Services files. In order for custom Services files to be discovered, they must
+meet these requirements:</p>
+<ul class="simple">
+<li>It’s namespace must be defined <code class="docutils literal"><span class="pre">Config\Autoload.php</span></code></li>
+<li>Inside the namespace, the file must be found at <code class="docutils literal"><span class="pre">Config\Services.php</span></code></li>
+<li>It must extend <code class="docutils literal"><span class="pre">CodeIgniter\Config\BaseService</span></code></li>
+</ul>
+<p>A small example should clarify this.</p>
+<p>Imagine that you’ve created a new directory, <code class="docutils literal"><span class="pre">Blog</span></code> in your root directory. This will hold a blog module with controllers,
+models, etc, and you’d like to make some of the classes available as a service. The first step is to create a new file:
+<code class="docutils literal"><span class="pre">Blog\Config\Services.php</span></code>. The skeleton of the file should be:</p>
+<blockquote>
+<div><p>&lt;?php namespace BlogConfig;</p>
+<p>use CodeIgniterConfigBaseService;</p>
+<p>class Services extends BaseService
+{</p>
+<blockquote>
+<div><p>public static function postManager()
+{</p>
+<blockquote>
+<div>…</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>Now you can use this file as described above. When you want to grab the posts service from any controller, you
+would simply use the framework’s <code class="docutils literal"><span class="pre">Config\Services</span></code> class to grab your service:</p>
+<blockquote>
+<div>$postManager = ConfigServices::postManager();</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If multiple Services file have the same method name, the first one found will be the instance returned.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -329,7 +366,7 @@ within the class, and, if not, creates a new one. All of the factory methods pro
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 01, 2018.
 
     </p>
   </div>
