@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="Logging Information" href="logging.html"/>
@@ -123,7 +120,6 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -201,14 +197,14 @@
   <div class="section" id="controller-filters">
 <h1>Controller Filters<a class="headerlink" href="#controller-filters" title="Permalink to this headline">¶</a></h1>
 <p>Controller Filters allow you to perform actions either before or after the controllers execute. Unlike <a class="reference internal" href="events.html"><span class="doc">events</span></a>,
-you can very simply choose which URI’s in your application have the filters applied to them. Incoming filters may
+you can very simply choose which URI&#8217;s in your application have the filters applied to them. Incoming filters may
 modify the Request, while after filters can act on and even modify the Response, allowing for a lot of flexibility
 and power. Some common examples of tasks that might be performed with filters are:</p>
 <ul class="simple">
 <li>Performing CSRF protection on the incoming requests</li>
 <li>Restricting areas of your site based upon their Role</li>
 <li>Perform rate limiting on certain endpoints</li>
-<li>Display a “Down for Maintenance” page</li>
+<li>Display a &#8220;Down for Maintenance&#8221; page</li>
 <li>Perform automatic content negotiation</li>
 <li>and more..</li>
 </ul>
@@ -259,7 +255,7 @@ This is typically used to peform redirects, like in this example:</p>
 </pre></div>
 </div>
 <p>If a Response instance is returned, the Response will be sent back to the client and script execution will stop.
-This can be useful for implementing rate limiting for API’s. See <strong>application/Filters/Throttle.php</strong> for an
+This can be useful for implementing rate limiting for API&#8217;s. See <strong>application/Filters/Throttle.php</strong> for an
 example.</p>
 </div>
 <div class="section" id="after-filters">
@@ -270,7 +266,7 @@ the final output. This could be used to ensure certain security headers were set
 the final output, or even to filter the final output with a bad words filter.</p>
 <div class="section" id="configuring-filters">
 <h4>Configuring Filters<a class="headerlink" href="#configuring-filters" title="Permalink to this headline">¶</a></h4>
-<p>Once you’ve created your filters, you need to configure when they get run. This is done in <code class="docutils literal"><span class="pre">application/Config/Filters.php</span></code>.
+<p>Once you&#8217;ve created your filters, you need to configure when they get run. This is done in <code class="docutils literal"><span class="pre">application/Config/Filters.php</span></code>.
 This file contains four properties that allow you to configure exactly when the filters run.</p>
 </div>
 </div>
@@ -285,7 +281,7 @@ filters to run:</p>
 </div>
 <p>Aliases are mandatory and if you try to use a full class name later, the system will throw an error. Defining them
 in this way makes it simple to switch out the class used. Great for when you decided you need to change to a
-different authentication system since you only change the filter’s class and you’re done.</p>
+different authentication system since you only change the filter&#8217;s class and you&#8217;re done.</p>
 <p>You can combine multiple filters into one alias, making complex sets of filters simple to apply:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$aliases</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;apiPrep&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
@@ -311,9 +307,9 @@ run on every request. Filters can be specified by adding their alias to either t
 </pre></div>
 </div>
 <p>There are times where you want to apply a filter to almost every request, but have a few that should be left alone.
-One common example is if you need to exclude a few URI’s from the CSRF protection filter to allow requests from
-third-party websites to hit one or two specific URI’s, while keeping the rest of them protected. To do this, add
-an array with the ‘except’ key and a uri to match as the value alongside the alias:</p>
+One common example is if you need to exclude a few URI&#8217;s from the CSRF protection filter to allow requests from
+third-party websites to hit one or two specific URI&#8217;s, while keeping the rest of them protected. To do this, add
+an array with the &#8216;except&#8217; key and a uri to match as the value alongside the alias:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;api/*&#39;</span><span class="p">]</span>
@@ -323,9 +319,9 @@ an array with the ‘except’ key and a uri to match as the value alongside the
 </pre></div>
 </div>
 <p>Any place you can use a URI in the filter settings, you can use a regular expression or, like in this example, use
-an asterisk for a wildcard that will match all characters after that. In this example, any URL’s starting with <code class="docutils literal"><span class="pre">api/</span></code>
-would be exempted from CSRF protection, but the site’s forms would all be protected. If you need to specify multiple
-URI’s you can use an array of URI patterns:</p>
+an asterisk for a wildcard that will match all characters after that. In this example, any URL&#8217;s starting with <code class="docutils literal"><span class="pre">api/</span></code>
+would be exempted from CSRF protection, but the site&#8217;s forms would all be protected. If you need to specify multiple
+URI&#8217;s you can use an array of URI patterns:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;foo/*&#39;</span><span class="p">,</span> <span class="s1">&#39;bar/*&#39;</span><span class="p">]]</span>
@@ -338,7 +334,7 @@ URI’s you can use an array of URI patterns:</p>
 <div class="section" id="methods">
 <h3>$methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
 <p>You can apply filters to all requests of a certain HTTP method, like POST, GET, PUT, etc. In this array, you would
-specify the method name in lowercase. It’s value would be an array of filters to run. Unlike the <code class="docutils literal"><span class="pre">$globals</span></code> or the
+specify the method name in lowercase. It&#8217;s value would be an array of filters to run. Unlike the <code class="docutils literal"><span class="pre">$globals</span></code> or the
 <code class="docutils literal"><span class="pre">$filters</span></code> properties, these will only run as before filters:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$methods</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;post&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">],</span>
@@ -346,8 +342,8 @@ specify the method name in lowercase. It’s value would be an array of filters 
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>In addition to the standard HTTP methods, this also supports two special cases: ‘cli’, and ‘ajax’. The names are
-self-explanatory here, but ‘cli’ would apply to all requests that were run from the command line, while ‘ajax’
+<p>In addition to the standard HTTP methods, this also supports two special cases: &#8216;cli&#8217;, and &#8216;ajax&#8217;. The names are
+self-explanatory here, but &#8216;cli&#8217; would apply to all requests that were run from the command line, while &#8216;ajax&#8217;
 would apply to every AJAX request.</p>
 </div>
 <div class="section" id="filters">
@@ -391,7 +387,7 @@ a list of URI patterns that filter should apply to:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -417,7 +413,7 @@ a list of URI patterns that filter should apply to:</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

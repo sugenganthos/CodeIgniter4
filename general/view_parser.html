@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="Helper Functions" href="helpers.html"/>
@@ -123,7 +120,6 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +250,7 @@ is ignored by the parser, and only substitutions are performed.</p>
 <p>This is purposeful: view files with no PHP.</p>
 <div class="section" id="what-it-does">
 <h3>What It Does<a class="headerlink" href="#what-it-does" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">Parser</span></code> class processes “PHP/HTML scripts” stored in the application’s view path.
+<p>The <code class="docutils literal"><span class="pre">Parser</span></code> class processes &#8220;PHP/HTML scripts&#8221; stored in the application&#8217;s view path.
 These scripts have a <code class="docutils literal"><span class="pre">.php</span></code> extension, but can not contain any PHP.</p>
 <p>Each view parameter (which we refer to as a pseudo-variable) triggers a substitution,
 based on the type of value you provided for it. Pseudo-variables are not
@@ -289,7 +285,7 @@ file</span></a> (in this example the file would be called blog_template.php),</p
 <h3>Parser Configuration Options<a class="headerlink" href="#parser-configuration-options" title="Permalink to this headline">¶</a></h3>
 <p>Several options can be passed to the <code class="docutils literal"><span class="pre">render()</span></code> or <code class="docutils literal"><span class="pre">renderString()</span></code> methods.</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">cache</span></code> - the time in seconds, to save a view’s results; ignored for renderString()</li>
+<li><code class="docutils literal"><span class="pre">cache</span></code> - the time in seconds, to save a view&#8217;s results; ignored for renderString()</li>
 <li><dl class="first docutils">
 <dt><code class="docutils literal"><span class="pre">cache_name</span></code> - the ID used to save/retrieve a cached view result; defaults to the viewpath;</dt>
 <dd>ignored for renderString()</dd>
@@ -329,7 +325,7 @@ has either a scalar or string value, as in this example:</p>
 <span class="c1">// Result: &lt;head&gt;&lt;title&gt;My ramblings&lt;/title&gt;&lt;/head&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">Parser</span></code> takes substitution a lot further with “variable pairs”,
+<p>The <code class="docutils literal"><span class="pre">Parser</span></code> takes substitution a lot further with &#8220;variable pairs&#8221;,
 used for nested substitutions or looping, and with some advanced
 constructs for conditional substitution.</p>
 <p>When the parser executes, it will generally</p>
@@ -362,10 +358,10 @@ at the top of the page:</p>
 <span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>In the above code you’ll notice a pair of variables: {blog_entries}
-data… {/blog_entries}. In a case like this, the entire chunk of data
+<p>In the above code you&#8217;ll notice a pair of variables: {blog_entries}
+data... {/blog_entries}. In a case like this, the entire chunk of data
 between these pairs would be repeated multiple times, corresponding to
-the number of rows in the “blog_entries” element of the parameters array.</p>
+the number of rows in the &#8220;blog_entries&#8221; element of the parameters array.</p>
 <p>Parsing variable pairs is done using the identical code shown above to
 parse single variables, except, you will add a multi-dimensional array
 corresponding to your variable pair data. Consider this example:</p>
@@ -387,8 +383,8 @@ corresponding to your variable pair data. Consider this example:</p>
 </div>
 <p>The value for the pseudo-variable <code class="docutils literal"><span class="pre">blog_entries</span></code> is a sequential
 array of associative arrays. The outer level does not have keys associated
-with each of the nested “rows”.</p>
-<p>If your “pair” data is coming from a database result, which is already a
+with each of the nested &#8220;rows&#8221;.</p>
+<p>If your &#8220;pair&#8221; data is coming from a database result, which is already a
 multi-dimensional array, you can simply use the database <code class="docutils literal"><span class="pre">getResultArray()</span></code>
 method:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM blog&quot;</span><span class="p">);</span>
@@ -433,13 +429,13 @@ the variable pair loop for that variable.</p>
 <span class="p">{</span><span class="o">/</span><span class="nx">blog_entry</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>If you would like the other pseudo-variables accessible inside the “blog_entry”
-scope, then make sure that the “cascadeData” option is set to true.</p>
+<p>If you would like the other pseudo-variables accessible inside the &#8220;blog_entry&#8221;
+scope, then make sure that the &#8220;cascadeData&#8221; option is set to true.</p>
 </div>
 <div class="section" id="comments">
 <h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
 <p>You can place comments in your templates that will be ignored and removed during parsing by wrapping the
-comments in a <code class="docutils literal"><span class="pre">{#</span>&#160; <span class="pre">#}</span></code> symbols.</p>
+comments in a <code class="docutils literal"><span class="pre">{#</span>&nbsp; <span class="pre">#}</span></code> symbols.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span><span class="c1"># This comment is removed during parsing. #}</span>
 <span class="p">{</span><span class="nx">blog_entry</span><span class="p">}</span>
         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
@@ -527,8 +523,8 @@ care with the user data that is used within conditionals, or you could open your
 </div>
 <div class="section" id="escaping-data">
 <h3>Escaping Data<a class="headerlink" href="#escaping-data" title="Permalink to this headline">¶</a></h3>
-<p>By default, all variable substitution is escaped to help prevent XSS attacks on your pages. CodeIgniter’s <code class="docutils literal"><span class="pre">esc</span></code> method
-supports several different contexts, like general <strong>html</strong>, when it’s in an HTML <strong>attr*, in **css</strong>, etc. If nothing
+<p>By default, all variable substitution is escaped to help prevent XSS attacks on your pages. CodeIgniter&#8217;s <code class="docutils literal"><span class="pre">esc</span></code> method
+supports several different contexts, like general <strong>html</strong>, when it&#8217;s in an HTML <strong>attr*, in **css</strong>, etc. If nothing
 else is specified, the data will be assumed to be in an HTML context. You can specify the context used by using the <strong>esc</strong>
 filter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">user_styles</span> <span class="o">|</span> <span class="nx">esc</span><span class="p">(</span><span class="nx">css</span><span class="p">)</span> <span class="p">}</span>
@@ -580,12 +576,12 @@ left to right:</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>abs</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Displays the absolute value of a number.</td>
 <td>{ v|abs }</td>
 </tr>
 <tr class="row-odd"><td>capitalize</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Displays the string in sentence case: all lowercase with first
 letter capitalized.</td>
 <td>{ v|capitalize}</td>
@@ -619,12 +615,12 @@ Same as <strong>excerpt</strong> helper function.</td>
 </tr>
 <tr class="row-odd"><td>highlight</td>
 <td>phrase</td>
-<td>Highlights a given phrase within the text using ‘&lt;mark&gt;&lt;/mark&gt;’
+<td>Highlights a given phrase within the text using &#8216;&lt;mark&gt;&lt;/mark&gt;&#8217;
 tags.</td>
 <td>{ v|highlight(view parser) }</td>
 </tr>
 <tr class="row-even"><td>highlight_code</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Highlights code samples with HTML/CSS.</td>
 <td>{ v|highlight_code }</td>
 </tr>
@@ -640,23 +636,23 @@ tags.</td>
 </tr>
 <tr class="row-odd"><td>local_currency</td>
 <td>currency, locale</td>
-<td>Displays a localized version of a currency. “currency” value is any
+<td>Displays a localized version of a currency. &#8220;currency&#8221; value is any
 3-letter ISO 4217 currency code.</td>
 <td>{ v|local_currency(EUR,en_US) }</td>
 </tr>
 <tr class="row-even"><td>local_number</td>
 <td>type, precision, locale</td>
-<td>Displays a localized version of a number. “type” can be one of:
+<td>Displays a localized version of a number. &#8220;type&#8221; can be one of:
 decimal, currency, percent, scientific, spellout, ordinal, duration.</td>
 <td>{ v|local_number(decimal,2,en_US) }</td>
 </tr>
 <tr class="row-odd"><td>lower</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Converts a string to lowercase.</td>
 <td>{ v|lower }</td>
 </tr>
 <tr class="row-even"><td>nl2br</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Replaces all newline characters (n) to an HTML &lt;br/&gt; tag.</td>
 <td>{ v|nl2br }</td>
 </tr>
@@ -666,7 +662,7 @@ decimal, currency, percent, scientific, spellout, ordinal, duration.</td>
 <td>{ v|number_format(3) }</td>
 </tr>
 <tr class="row-even"><td>prose</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Takes a body of text and uses the <strong>auto_typography()</strong> method to
 turn it into prettier, easier-to-read, prose.</td>
 <td>{ v|prose }</td>
@@ -683,20 +679,20 @@ turn it into prettier, easier-to-read, prose.</td>
 <td>{ v|strip_tags(&lt;br&gt;) }</td>
 </tr>
 <tr class="row-odd"><td>title</td>
-<td>&#160;</td>
-<td>Displays a “title case” version of the string, with all lowercase,
+<td>&nbsp;</td>
+<td>Displays a &#8220;title case&#8221; version of the string, with all lowercase,
 and each word capitalized.</td>
 <td>{ v|title }</td>
 </tr>
 <tr class="row-even"><td>upper</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Displays the string in all uppercase.</td>
 <td>{ v|upper }</td>
 </tr>
 </tbody>
 </table>
-<p>See <a class="reference external" href="http://php.net/manual/en/numberformatter.create.php">PHP’s NumberFormatter</a> for details relevant to the
-“local_number” filter.</p>
+<p>See <a class="reference external" href="http://php.net/manual/en/numberformatter.create.php">PHP&#8217;s NumberFormatter</a> for details relevant to the
+&#8220;local_number&#8221; filter.</p>
 </div>
 <div class="section" id="custom-filters">
 <h4>Custom Filters<a class="headerlink" href="#custom-filters" title="Permalink to this headline">¶</a></h4>
@@ -730,7 +726,7 @@ them very simple to implement. Within templates, plugins are specified by <code 
 </pre></div>
 </div>
 <p>This example shows a plugin named <strong>foo</strong>. It can manipulate any of the content between its opening and closing tags.
-In this example, it could work with the text ” inner content “. Plugins are processed before any pseudo-variable
+In this example, it could work with the text &#8221; inner content &#8221;. Plugins are processed before any pseudo-variable
 replacements happen.</p>
 <p>While plugins will often consist of tag pairs, like shown above, they can also be a single tag, with no closing tag:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">+</span> <span class="nx">foo</span> <span class="o">+</span><span class="p">}</span>
@@ -764,24 +760,24 @@ key/value pairs:</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>current_url</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Alias for the current_url helper function.</td>
 <td>{+ current_url +}</td>
 </tr>
 <tr class="row-odd"><td>previous_url</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>Alias for the previous_url helper function.</td>
 <td>{+ previous_url +}</td>
 </tr>
 <tr class="row-even"><td>mailto</td>
 <td>email, title, attributes</td>
 <td>Alias for the mailto helper function.</td>
-<td>{+ mailto <a class="reference external" href="mailto:email=foo&#37;&#52;&#48;example&#46;com">email=foo<span>&#64;</span>example<span>&#46;</span>com</a> title=”Stranger Things” +}</td>
+<td>{+ mailto <a class="reference external" href="mailto:email=foo&#37;&#52;&#48;example&#46;com">email=foo<span>&#64;</span>example<span>&#46;</span>com</a> title=&#8221;Stranger Things&#8221; +}</td>
 </tr>
 <tr class="row-odd"><td>safe_mailto</td>
 <td>email, title, attributes</td>
 <td>Alias for the safe_mailto helper function.</td>
-<td>{+ safe_mailto <a class="reference external" href="mailto:email=foo&#37;&#52;&#48;example&#46;com">email=foo<span>&#64;</span>example<span>&#46;</span>com</a> title=”Stranger Things” +}</td>
+<td>{+ safe_mailto <a class="reference external" href="mailto:email=foo&#37;&#52;&#48;example&#46;com">email=foo<span>&#64;</span>example<span>&#46;</span>com</a> title=&#8221;Stranger Things&#8221; +}</td>
 </tr>
 <tr class="row-even"><td>lang</td>
 <td>language string</td>
@@ -791,7 +787,7 @@ key/value pairs:</p>
 <tr class="row-odd"><td>validation_errors</td>
 <td>fieldname(optional)</td>
 <td>Returns either error string for the field (if specified) or all validation errors.</td>
-<td>{+ validation_errors +} , {+ validation_errors field=”email” +}</td>
+<td>{+ validation_errors +} , {+ validation_errors field=&#8221;email&#8221; +}</td>
 </tr>
 </tbody>
 </table>
@@ -952,9 +948,9 @@ using a view fragment:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$view</strong> (<em>string</em>) – File name of the view source</li>
-<li><strong>$options</strong> (<em>array</em>) – Array of options, as key/value pairs</li>
-<li><strong>$saveData</strong> (<em>boolean</em>) – If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
+<li><strong>$view</strong> (<em>string</em>) &#8211; File name of the view source</li>
+<li><strong>$options</strong> (<em>array</em>) &#8211; Array of options, as key/value pairs</li>
+<li><strong>$saveData</strong> (<em>boolean</em>) &#8211; If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
 </ul>
 </td>
 </tr>
@@ -975,7 +971,7 @@ using a view fragment:</p>
 <p>Options supported:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">cache</span></code> - the time in seconds, to save a view’s results</li>
+<li><code class="docutils literal"><span class="pre">cache</span></code> - the time in seconds, to save a view&#8217;s results</li>
 <li><code class="docutils literal"><span class="pre">cache_name</span></code> - the ID used to save/retrieve a cached view result; defaults to the viewpath</li>
 <li><code class="docutils literal"><span class="pre">cascadeData</span></code> - true if the data pairs in effect when a nested or loop substitution occurs should be propagated</li>
 <li><code class="docutils literal"><span class="pre">saveData</span></code> - true if the view data parameter should be retained for subsequent calls</li>
@@ -993,9 +989,9 @@ substitutions are performed for each data pair.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$template</strong> (<em>string</em>) – View source provided as a string</li>
-<li><strong>$options</strong> (<em>array</em>) – Array of options, as key/value pairs</li>
-<li><strong>$saveData</strong> (<em>boolean</em>) – If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
+<li><strong>$template</strong> (<em>string</em>) &#8211; View source provided as a string</li>
+<li><strong>$options</strong> (<em>array</em>) &#8211; Array of options, as key/value pairs</li>
+<li><strong>$saveData</strong> (<em>boolean</em>) &#8211; If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
 </ul>
 </td>
 </tr>
@@ -1022,8 +1018,8 @@ substitutions are performed for each data pair.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Array of view data strings, as key/value pairs</li>
-<li><strong>$context</strong> (<em>string</em>) – The context to use for data escaping.</li>
+<li><strong>$data</strong> (<em>array</em>) &#8211; Array of view data strings, as key/value pairs</li>
+<li><strong>$context</strong> (<em>string</em>) &#8211; The context to use for data escaping.</li>
 </ul>
 </td>
 </tr>
@@ -1043,7 +1039,7 @@ substitutions are performed for each data pair.</p>
 
 <dl class="docutils">
 <dt>Supported escape contexts: html, css, js, url, or attr or raw.</dt>
-<dd>If ‘raw’, no escaping will happen.</dd>
+<dd>If &#8216;raw&#8217;, no escaping will happen.</dd>
 </dl>
 <dl class="method">
 <dt id="setVar">
@@ -1053,9 +1049,9 @@ substitutions are performed for each data pair.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – Name of the view data variable</li>
-<li><strong>$value</strong> (<em>mixed</em>) – The value of this view data</li>
-<li><strong>$context</strong> (<em>string</em>) – The context to use for data escaping.</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; Name of the view data variable</li>
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; The value of this view data</li>
+<li><strong>$context</strong> (<em>string</em>) &#8211; The context to use for data escaping.</li>
 </ul>
 </td>
 </tr>
@@ -1075,7 +1071,7 @@ substitutions are performed for each data pair.</p>
 
 <dl class="docutils">
 <dt>Supported escape contexts: html, css, js, url, attr or raw.</dt>
-<dd>If ‘raw’, no escaping will happen.</dd>
+<dd>If &#8216;raw&#8217;, no escaping will happen.</dd>
 </dl>
 <dl class="method">
 <dt id="setDelimiters">
@@ -1085,8 +1081,8 @@ substitutions are performed for each data pair.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$leftDelimiter</strong> (<em>string</em>) – Left delimiter for substitution fields</li>
-<li><strong>$rightDelimiter</strong> (<em>string</em>) – right delimiter for substitution fields</li>
+<li><strong>$leftDelimiter</strong> (<em>string</em>) &#8211; Left delimiter for substitution fields</li>
+<li><strong>$rightDelimiter</strong> (<em>string</em>) &#8211; right delimiter for substitution fields</li>
 </ul>
 </td>
 </tr>
@@ -1132,7 +1128,7 @@ substitutions are performed for each data pair.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -1158,7 +1154,7 @@ substitutions are performed for each data pair.</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

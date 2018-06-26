@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/> 
 
   
@@ -253,7 +250,7 @@ the timer to display. The second is the number of decimal places to display. Thi
 <div class="section" id="using-the-iterator">
 <h2><a class="toc-backref" href="#id4">Using the Iterator</a><a class="headerlink" href="#using-the-iterator" title="Permalink to this headline">¶</a></h2>
 <p>The Iterator is a simple tool that is designed to allow you to try out multiple variations on a solution to
-see the speed differences and different memory usage patterns. You can add any number of “tasks” for it to
+see the speed differences and different memory usage patterns. You can add any number of &#8220;tasks&#8221; for it to
 run and the class will run the task hundreds or thousands of times to get a clearer picture of performance.
 The results can then be retrieved and used by your script, or displayed as an HTML table.</p>
 <div class="section" id="creating-tasks-to-run">
@@ -281,14 +278,14 @@ this test by. The second parameter is the Closure, itself:</p>
 </div>
 <div class="section" id="running-the-tasks">
 <h3><a class="toc-backref" href="#id6">Running the Tasks</a><a class="headerlink" href="#running-the-tasks" title="Permalink to this headline">¶</a></h3>
-<p>Once you’ve added the tasks to run, you can use the <code class="docutils literal"><span class="pre">run()</span></code> method to loop over the tasks many times.
+<p>Once you&#8217;ve added the tasks to run, you can use the <code class="docutils literal"><span class="pre">run()</span></code> method to loop over the tasks many times.
 By default, it will run each task 1000 times. This is probably sufficient for most simple tests. If you need
 to run the tests more times than that, you can pass the number as the first parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Run the tests 3000 times.</span>
 <span class="nv">$iterator</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Once it has run, it will return an HTML table with the results of the test. If you don’t want the results
+<p>Once it has run, it will return an HTML table with the results of the test. If you don&#8217;t want the results
 displayed, you can pass in <cite>false</cite> as the second parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Don&#39;t display the results.</span>
 <span class="nv">$iterator</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
@@ -312,7 +309,7 @@ displayed, you can pass in <cite>false</cite> as the second parameter:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -338,7 +335,7 @@ displayed, you can pass in <cite>false</cite> as the second parameter:</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

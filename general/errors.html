@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="Debugging Your Application" href="debugging.html"/>
@@ -123,7 +120,6 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -201,14 +197,14 @@
   <div class="section" id="error-handling">
 <h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
 <p>CodeIgniter builds error reporting into your system through Exceptions, both the <a class="reference external" href="http://php.net/manual/en/spl.exceptions.php">SPL collection</a>, as
-well as a few custom exceptions that are provided by the framework. Depending on your environment’s setup, the
+well as a few custom exceptions that are provided by the framework. Depending on your environment&#8217;s setup, the
 default action when an error or exception is thrown is to display a detailed error report, unless the application
 is running under the <code class="docutils literal"><span class="pre">production</span></code> environment. In this case, a more generic  message is displayed to
 keep the best user experience for your users.</p>
 <div class="section" id="using-exceptions">
 <h2>Using Exceptions<a class="headerlink" href="#using-exceptions" title="Permalink to this headline">¶</a></h2>
 <p>This section is a quick overview for newer programmers, or developers who are not experienced with using exceptions.</p>
-<p>Exceptions are simply events that happen when the exception is “thrown”. This halts the current flow of the script, and
+<p>Exceptions are simply events that happen when the exception is &#8220;thrown&#8221;. This halts the current flow of the script, and
 execution is then sent to the error handler which displays the appropriate error page:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Some message goes here&quot;</span><span class="p">);</span>
 </pre></div>
@@ -339,7 +335,7 @@ or when it is temporarily lost:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -365,7 +361,7 @@ or when it is temporarily lost:</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

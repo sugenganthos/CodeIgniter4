@@ -34,13 +34,7 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
-        <link rel="up" title="Library Reference" href="index.html"/>
-        <link rel="next" title="Email Class" href="email.html"/>
-        <link rel="prev" title="Content Negotiation" href="content_negotiation.html"/> 
+    <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,35 +95,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Library Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api_responses.html">API Response Trait</a></li>
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content_negotiation.html">Content Negotiation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">CURLRequest Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="localization.html">Localization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="message.html">HTTP Messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="request.html">Request Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html">Dates and Times</a></li>
-<li class="toctree-l2"><a class="reference internal" href="typography.html">Typography</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uri.html">Working with URIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="validation.html">Validation</a></li>
-</ul>
-</li>
-</ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
 </ul>
@@ -181,8 +146,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">Library Reference</a> &raquo;</li>
         
       <li>CURLRequest Class</li>
     
@@ -382,7 +345,7 @@ to ensure that your script handles that:</p>
 or any of the shortcut methods.</p>
 <div class="section" id="allow-redirects">
 <h3>allow_redirects<a class="headerlink" href="#allow-redirects" title="Permalink to this headline">¶</a></h3>
-<p>By default, cURL will follow all “Location:” headers the remote servers send back. The <code class="docutils literal"><span class="pre">allow_redirects</span></code> option
+<p>By default, cURL will follow all &#8220;Location:&#8221; headers the remote servers send back. The <code class="docutils literal"><span class="pre">allow_redirects</span></code> option
 allows you to modify how that works.</p>
 <p>If you set the value to <code class="docutils literal"><span class="pre">false</span></code>, then it will not follow any redirects at all:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://example.com&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;allow_redirects&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">]);</span>
@@ -476,7 +439,7 @@ script execution. This is done by passing CURLOPT_VERBOSE and echoing the output
 <h3>form_params<a class="headerlink" href="#form-params" title="Permalink to this headline">¶</a></h3>
 <p>You can send form data in an application/x-www-form-urlencoded POST request by passing an associative array in
 the <code class="docutils literal"><span class="pre">form_params</span></code> option. This will set the <code class="docutils literal"><span class="pre">Content-Type</span></code> header to <code class="docutils literal"><span class="pre">application/x-www-form-urlencoded</span></code>
-if it’s not already set:</p>
+if it&#8217;s not already set:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;/post&#39;</span><span class="p">,</span> <span class="p">[</span>
         <span class="s1">&#39;form_params&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
@@ -610,22 +573,13 @@ or 1.1, 2.0 is currently unsupported.):</p>
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="email.html" class="btn btn-neutral float-right" title="Email Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="content_negotiation.html" class="btn btn-neutral" title="Content Negotiation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -651,7 +605,7 @@ or 1.1, 2.0 is currently unsupported.):</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

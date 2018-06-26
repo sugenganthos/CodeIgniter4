@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="Controllers" href="controllers.html"/>
@@ -123,12 +120,8 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
@@ -204,7 +197,7 @@
   <div class="section" id="codeigniter-urls">
 <h1>CodeIgniter URLs<a class="headerlink" href="#codeigniter-urls" title="Permalink to this headline">¶</a></h1>
 <p>By default, URLs in CodeIgniter are designed to be search-engine and human-friendly. Rather than using the standard
-“query-string” approach to URLs that is synonymous with dynamic systems, CodeIgniter uses a <strong>segment-based</strong> approach:</p>
+&#8220;query-string&#8221; approach to URLs that is synonymous with dynamic systems, CodeIgniter uses a <strong>segment-based</strong> approach:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
@@ -234,7 +227,7 @@ by different servers, but we will show examples for the two most common web serv
 <div class="section" id="apache-web-server">
 <h3>Apache Web Server<a class="headerlink" href="#apache-web-server" title="Permalink to this headline">¶</a></h3>
 <p>Apache must have the <em>mod_rewrite</em> extension enabled. If it does, you can use a <code class="docutils literal"><span class="pre">.htaccess</span></code> file with some simple rules.
-Here is an example of such a file, using the “negative” method in which everything is redirected except the specified
+Here is an example of such a file, using the &#8220;negative&#8221; method in which everything is redirected except the specified
 items:</p>
 <div class="highlight-apache"><div class="highlight"><pre><span></span><span class="nb">RewriteEngine</span> <span class="k">On</span>
 <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
@@ -291,7 +284,7 @@ settings of the root and alias directives), and then sends the request to the in
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -317,7 +310,7 @@ settings of the root and alias directives), and then sends the request to the in
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

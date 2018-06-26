@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="Installation" href="index.html"/>
         <link rel="next" title="Local Development Server" href="local_server.html"/>
@@ -107,9 +104,6 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
@@ -187,7 +181,7 @@
 <p>Here are some common installation problems, and suggested workarounds.</p>
 <div class="section" id="i-have-to-include-index-php-in-my-url">
 <h2>I have to include index.php in my URL<a class="headerlink" href="#i-have-to-include-index-php-in-my-url" title="Permalink to this headline">¶</a></h2>
-<p>If a URL like <code class="docutils literal"><span class="pre">/mypage/find/apple</span></code> doesn’t work, but the similar
+<p>If a URL like <code class="docutils literal"><span class="pre">/mypage/find/apple</span></code> doesn&#8217;t work, but the similar
 URL <code class="docutils literal"><span class="pre">/index.php/mypage/find/apple</span></code> does, then your <code class="docutils literal"><span class="pre">.htaccess</span></code> rules
 (for Apache) are not setup properly.</p>
 </div>
@@ -198,8 +192,8 @@ page is loading, it might be that your server does not support the
 REQUEST_URI variable needed to serve search-engine friendly URLs. As a
 first step, open your <em>application/Config/App.php</em> file and look for
 the URI Protocol information. It will recommend that you try a couple of
-alternate settings. If it still doesn’t work after you’ve tried this
-you’ll need to force CodeIgniter to add a question mark to your URLs. To
+alternate settings. If it still doesn&#8217;t work after you&#8217;ve tried this
+you&#8217;ll need to force CodeIgniter to add a question mark to your URLs. To
 do this open your <em>application/Config/App.php</em> file and change this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$indexPage</span> <span class="o">=</span> <span class="s1">&#39;index.php&#39;</span><span class="p">;</span>
 </pre></div>
@@ -234,7 +228,7 @@ do this open your <em>application/Config/App.php</em> file and change this:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -260,7 +254,7 @@ do this open your <em>application/Config/App.php</em> file and change this:</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

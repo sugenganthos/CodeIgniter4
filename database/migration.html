@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="Database Reference" href="index.html"/>
         <link rel="next" title="Database Seeding" href="seeds.html"/>
@@ -113,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">Getting MetaData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model.html">Using CodeIgniter's Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html">Using CodeIgniter&#8217;s Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="entities.html">Using Entity Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database Migrations</a></li>
@@ -316,7 +313,7 @@ match the name of the database group exactly:</p>
 <p>The migration library can automatically scan all namespaces you have defined within
 <strong>application/Config/Autoload.php</strong> and its <code class="docutils literal"><span class="pre">$psr4</span></code> property for matching directory
 names. It will include all migrations it finds in Database/Migrations.</p>
-<p>Each namespace has it’s own version sequence, this will help you upgrade and downgrade each module (namespace) without affecting other namespaces.</p>
+<p>Each namespace has it&#8217;s own version sequence, this will help you upgrade and downgrade each module (namespace) without affecting other namespaces.</p>
 <p>For example, assume that we have the the following namespaces defined in our Autoload
 configuration file:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
@@ -429,7 +426,7 @@ for the version.</p>
 <li>(all) to migrate all namespaces to the latest migration</li>
 </ul>
 <p><strong>status</strong></p>
-<p>Displays a list of all migrations and the date and time they ran, or ‘–’ if they have not been run:</p>
+<p>Displays a list of all migrations and the date and time they ran, or &#8216;&#8211;&#8217; if they have not been run:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">migrate</span><span class="o">:</span><span class="nx">status</span>
 <span class="nx">Filename</span>               <span class="nx">Migrated</span> <span class="nx">On</span>
 <span class="nx">First_migration</span><span class="o">.</span><span class="nx">php</span>    <span class="mi">2016</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">25</span> <span class="mo">04</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">22</span>
@@ -473,7 +470,7 @@ for the version.</p>
 <td>Enable or disable migrations.</td>
 </tr>
 <tr class="row-odd"><td><strong>path</strong></td>
-<td>‘Database/Migrations/’</td>
+<td>&#8216;Database/Migrations/&#8217;</td>
 <td>None</td>
 <td>The path to your migrations folder.</td>
 </tr>
@@ -488,8 +485,8 @@ for the version.</p>
 <td>The table name for storing the schema version number.</td>
 </tr>
 <tr class="row-even"><td><strong>type</strong></td>
-<td>‘timestamp’</td>
-<td>‘timestamp’ / ‘sequential’</td>
+<td>&#8216;timestamp&#8217;</td>
+<td>&#8216;timestamp&#8217; / &#8216;sequential&#8217;</td>
 <td>The type of numeric identifier used to name migration files.</td>
 </tr>
 </tbody>
@@ -508,7 +505,7 @@ for the version.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$group</strong> (<em>mixed</em>) – database group name, if null (App) namespace will be used.</li>
+<li><strong>$group</strong> (<em>mixed</em>) &#8211; database group name, if null (App) namespace will be used.</li>
 </ul>
 </td>
 </tr>
@@ -548,8 +545,8 @@ for the version.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$namespace</strong> (<em>mixed</em>) – application namespace, if null (App) namespace will be used.</li>
-<li><strong>$group</strong> (<em>mixed</em>) – database group name, if null default database group will be used.</li>
+<li><strong>$namespace</strong> (<em>mixed</em>) &#8211; application namespace, if null (App) namespace will be used.</li>
+<li><strong>$group</strong> (<em>mixed</em>) &#8211; database group name, if null default database group will be used.</li>
 </ul>
 </td>
 </tr>
@@ -574,7 +571,7 @@ newest migration found in the filesystem.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$group</strong> (<em>mixed</em>) – database group name, if null default database group will be used.</li>
+<li><strong>$group</strong> (<em>mixed</em>) &#8211; database group name, if null default database group will be used.</li>
 </ul>
 </td>
 </tr>
@@ -599,9 +596,9 @@ newest migration found for all namespaces.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$namespace</strong> (<em>mixed</em>) – application namespace, if null (App) namespace will be used.</li>
-<li><strong>$group</strong> (<em>mixed</em>) – database group name, if null default database group will be used.</li>
-<li><strong>$target_version</strong> (<em>mixed</em>) – Migration version to process</li>
+<li><strong>$namespace</strong> (<em>mixed</em>) &#8211; application namespace, if null (App) namespace will be used.</li>
+<li><strong>$group</strong> (<em>mixed</em>) &#8211; database group name, if null default database group will be used.</li>
+<li><strong>$target_version</strong> (<em>mixed</em>) &#8211; Migration version to process</li>
 </ul>
 </td>
 </tr>
@@ -628,7 +625,7 @@ specific versions. It works just like <code class="docutils literal"><span class
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$namespace</strong> (<em>string</em>) – application namespace.</li>
+<li><strong>$namespace</strong> (<em>string</em>) &#8211; application namespace.</li>
 </ul>
 </td>
 </tr>
@@ -655,7 +652,7 @@ specific versions. It works just like <code class="docutils literal"><span class
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$group</strong> (<em>string</em>) – database group name.</li>
+<li><strong>$group</strong> (<em>string</em>) &#8211; database group name.</li>
 </ul>
 </td>
 </tr>
@@ -702,7 +699,7 @@ specific versions. It works just like <code class="docutils literal"><span class
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -728,7 +725,7 @@ specific versions. It works just like <code class="docutils literal"><span class
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

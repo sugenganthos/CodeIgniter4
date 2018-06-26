@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="View Cells" href="view_cells.html"/>
@@ -123,12 +120,8 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
@@ -277,7 +270,7 @@ content view, and a footer view. That might look something like this:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In the example above, we are using “dynamically added data”, which you will see below.</p>
+<p>In the example above, we are using &#8220;dynamically added data&#8221;, which you will see below.</p>
 </div>
 <div class="section" id="storing-views-within-sub-directories">
 <h2>Storing Views within Sub-directories<a class="headerlink" href="#storing-views-within-sub-directories" title="Permalink to this headline">¶</a></h2>
@@ -317,7 +310,7 @@ along <code class="docutils literal"><span class="pre">cache_name</span></code> 
 <div class="section" id="adding-dynamic-data-to-the-view">
 <h2>Adding Dynamic Data to the View<a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Permalink to this headline">¶</a></h2>
 <p>Data is passed from the controller to the view by way of an array in the second parameter of the view function.
-Here’s an example:</p>
+Here&#8217;s an example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
         <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Heading&#39;</span><span class="p">,</span>
@@ -327,7 +320,7 @@ Here’s an example:</p>
 <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Let’s try it with your controller file. Open it and add this code:</p>
+<p>Let&#8217;s try it with your controller file. Open it and add this code:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
 <span class="p">{</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
@@ -351,9 +344,9 @@ Here’s an example:</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Then load the page at the URL you’ve been using and you should see the variables replaced.</p>
+<p>Then load the page at the URL you&#8217;ve been using and you should see the variables replaced.</p>
 <p>The data passed in is only available during one call to <cite>view</cite>. If you call the function multiple times
-in a single request, you will have to pass the desired data to each view. This keeps any data from “bleeding” into
+in a single request, you will have to pass the desired data to each view. This keeps any data from &#8220;bleeding&#8221; into
 other views, potentially causing issues. If you would prefer the data to persist, you can pass the <cite>saveData</cite> option
 into the <cite>$option</cite> array in the third parameter.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
@@ -437,7 +430,7 @@ typically be in the form of a multi-dimensional array.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -463,7 +456,7 @@ typically be in the form of a multi-dimensional array.</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

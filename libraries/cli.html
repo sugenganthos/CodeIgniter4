@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/> 
 
   
@@ -169,7 +166,7 @@
             
   <div class="section" id="cli-library">
 <h1><a class="toc-backref" href="#id1">CLI Library</a><a class="headerlink" href="#cli-library" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter’s CLI library makes creating interactive command-line scripts simple, including:</p>
+<p>CodeIgniter&#8217;s CLI library makes creating interactive command-line scripts simple, including:</p>
 <ul class="simple">
 <li>Prompting the user for more information</li>
 <li>Writing multi-colored text the terminal</li>
@@ -190,7 +187,7 @@
 </div>
 <div class="section" id="initializing-the-class">
 <h2><a class="toc-backref" href="#id2">Initializing the Class</a><a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h2>
-<p>You do not need to create an instance of the CLI library, since all of it’s methods are static. Instead, you simply
+<p>You do not need to create an instance of the CLI library, since all of it&#8217;s methods are static. Instead, you simply
 need to ensure your controller can locate it via a <code class="docutils literal"><span class="pre">use</span></code> statement above your class:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">use</span> <span class="nx">\CodeIgniter\CLI\CLI</span><span class="p">;</span>
@@ -230,7 +227,7 @@ second parameter:</p>
 <h2><a class="toc-backref" href="#id4">Providing Feedback</a><a class="headerlink" href="#providing-feedback" title="Permalink to this headline">¶</a></h2>
 <p><strong>write()</strong></p>
 <p>Several methods are provided for you to provide feedback to your users. This can be as simple as a single status update
-or a complex table of information that wraps to the user’s terminal window. At the core of this is the <code class="docutils literal"><span class="pre">write()</span></code>
+or a complex table of information that wraps to the user&#8217;s terminal window. At the core of this is the <code class="docutils literal"><span class="pre">write()</span></code>
 method which takes the string to output as the first parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;The rain in Spain falls mainly on the plains.&#39;</span><span class="p">);</span>
 </pre></div>
@@ -239,7 +236,7 @@ method which takes the string to output as the first parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;File created.&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This could be used to differentiate messages by status, or create ‘headers’ by using a different color. You can
+<p>This could be used to differentiate messages by status, or create &#8216;headers&#8217; by using a different color. You can
 even set background colors by passing the color name in as the third parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;File overwritten.&#39;</span><span class="p">,</span> <span class="s1">&#39;light_red&#39;</span><span class="p">,</span> <span class="s1">&#39;dark_gray&#39;</span><span class="p">);</span>
 </pre></div>
@@ -277,7 +274,7 @@ it inside of a <code class="docutils literal"><span class="pre">write()</span></
 <p><strong>error()</strong></p>
 <p>If you need to output errors, you should use the appropriately named <code class="docutils literal"><span class="pre">error()</span></code> method. This writes light-red text
 to STDERR, instead of STDOUT, like <code class="docutils literal"><span class="pre">write()</span></code> and <code class="docutils literal"><span class="pre">color()</span></code> do. This can be useful if you have scripts watching
-for errors so they don’t have to sift through all of the information, only the actual error messages. You use it
+for errors so they don&#8217;t have to sift through all of the information, only the actual error messages. You use it
 exactly as you would the <code class="docutils literal"><span class="pre">write()</span></code> method:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">error</span><span class="p">(</span><span class="s1">&#39;Cannot write to file: &#39;</span><span class="o">.</span> <span class="nv">$file</span><span class="p">);</span>
 </pre></div>
@@ -290,7 +287,7 @@ window and not go off screen:</p>
 <span class="nx">CLI</span><span class="o">::</span><span class="na">wrap</span><span class="p">(</span><span class="s2">&quot;Some long description goes here that might be longer than the current window.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>By default the string will wrap at the terminal width. Windows currently doesn’t provide a way to determine
+<p>By default the string will wrap at the terminal width. Windows currently doesn&#8217;t provide a way to determine
 the window size, so we default to 80 characters. If you want to restrict the width to something shorter that
 you can be pretty sure fits within the window, pass the maximum line-length as the second parameter. This
 will break the string at the nearest word barrier so that words are not broken.</p>
@@ -300,7 +297,7 @@ will break the string at the nearest word barrier so that words are not broken.<
 </div>
 <p>You may find that you want a column on the left of titles, files, or tasks, while you want a column of text
 on the right with their descriptions. By default, this will wrap back to the left edge of the window, which
-doesn’t allow things to line up in columns. In cases like this, you can pass in a number of spaces to pad
+doesn&#8217;t allow things to line up in columns. In cases like this, you can pass in a number of spaces to pad
 every line after the first line, so that you will have a crisp column edge on the left:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Determine the maximum length of all titles</span>
 <span class="c1">// to determine the width of the left column</span>
@@ -334,7 +331,7 @@ task1abc   Lorem Ipsum has been the industry&#39;s
 </div>
 <p><strong>clearScreen()</strong></p>
 <p>You can clear the current terminal window with the <code class="docutils literal"><span class="pre">clearScreen()</span></code> method. In most versions of Windows, this will
-simply insert 40 blank lines since Windows doesn’t support this feature. Windows 10 bash integration should change
+simply insert 40 blank lines since Windows doesn&#8217;t support this feature. Windows 10 bash integration should change
 this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">clearScreen</span><span class="p">();</span>
 </pre></div>
@@ -410,7 +407,7 @@ waiting for a key press.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -436,7 +433,7 @@ waiting for a key press.</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

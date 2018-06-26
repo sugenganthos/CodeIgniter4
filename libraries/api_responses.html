@@ -34,13 +34,7 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
-        <link rel="up" title="Library Reference" href="index.html"/>
-        <link rel="next" title="Benchmarking" href="benchmark.html"/>
-        <link rel="prev" title="Library Reference" href="index.html"/> 
+    <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,35 +95,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Library Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">API Response Trait</a></li>
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content_negotiation.html">Content Negotiation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="localization.html">Localization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="message.html">HTTP Messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="request.html">Request Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html">Dates and Times</a></li>
-<li class="toctree-l2"><a class="reference internal" href="typography.html">Typography</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uri.html">Working with URIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="validation.html">Validation</a></li>
-</ul>
-</li>
-</ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
 </ul>
@@ -182,8 +147,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Library Reference</a> &raquo;</li>
-        
       <li>API Response Trait</li>
     
     
@@ -203,7 +166,7 @@
             
   <div class="section" id="api-response-trait">
 <h1>API Response Trait<a class="headerlink" href="#api-response-trait" title="Permalink to this headline">¶</a></h1>
-<p>Much of modern PHP development requires building API’s, whether simply to provide data for a javascript-heavy
+<p>Much of modern PHP development requires building API&#8217;s, whether simply to provide data for a javascript-heavy
 single page application, or as a standalone product. CodeIgniter provides an API Response trait that can be
 used with any controller to make common response types simple, with no need to remember which HTTP status code
 should be returned for which response types.</p>
@@ -237,7 +200,7 @@ should be returned for which response types.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In this example, an HTTP status code of 201 is returned, with the generic status message, ‘Created’. Methods
+<p>In this example, an HTTP status code of 201 is returned, with the generic status message, &#8216;Created&#8217;. Methods
 exist for the most common use cases:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Generic response method</span>
 <span class="nx">respond</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
@@ -310,9 +273,9 @@ JSON data will be sent back to the client.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$data</strong> (<em>mixed</em>) – The data to return to the client. Either string or array.</li>
-<li><strong>$statusCode</strong> (<em>int</em>) – The HTTP status code to return. Defaults to 200</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; The data to return to the client. Either string or array.</li>
+<li><strong>$statusCode</strong> (<em>int</em>) &#8211; The HTTP status code to return. Defaults to 200</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
@@ -340,19 +303,19 @@ be the final method in the script execution.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$messages</strong> (<em>mixed</em>) – A string or array of strings that contain error messages encountered.</li>
-<li><strong>$status</strong> (<em>int</em>) – The HTTP status code to return. Defaults to 400.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$messages</strong> (<em>mixed</em>) &#8211; A string or array of strings that contain error messages encountered.</li>
+<li><strong>$status</strong> (<em>int</em>) &#8211; The HTTP status code to return. Defaults to 400.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A multi-part response in the client’s preferred format.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A multi-part response in the client&#8217;s preferred format.</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>The is the generic method used to represent a failed response, and is used by all of the other “fail” methods.</p>
+<p>The is the generic method used to represent a failed response, and is used by all of the other &#8220;fail&#8221; methods.</p>
 <p>The <code class="docutils literal"><span class="pre">$messages</span></code> element can be either a string or an array of strings.</p>
 <p>The <code class="docutils literal"><span class="pre">$status</span></code> parameter is the HTTP status code that should be returned.</p>
 <p>Since many APIs are better served using custom error codes, a custom error code can be passed in the third
@@ -382,12 +345,12 @@ code of the error. The <code class="docutils literal"><span class="pre">messages
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>mixed</em>) – The data to return to the client. Either string or array.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; The data to return to the client. Either string or array.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -407,12 +370,12 @@ code of the error. The <code class="docutils literal"><span class="pre">messages
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>mixed</em>) – The data to return to the client. Either string or array.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; The data to return to the client. Either string or array.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -432,13 +395,13 @@ code of the error. The <code class="docutils literal"><span class="pre">messages
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -458,20 +421,20 @@ or has incorrect authorization. Status code is 401.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Unlike <code class="docutils literal"><span class="pre">failUnauthorized</span></code>, this method should be used when the requested API endpoint is never allowed.
 Unauthorized implies the client is encouraged to try again with different credentials. Forbidden means
-the client should not try again because it won’t help. Status code is 403.</p>
+the client should not try again because it won&#8217;t help. Status code is 403.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">failForbidden</span><span class="p">(</span><span class="s1">&#39;Invalid API endpoint.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -485,13 +448,13 @@ the client should not try again because it won’t help. Status code is 403.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -510,13 +473,13 @@ the client should not try again because it won’t help. Status code is 403.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -536,13 +499,13 @@ Status code is typically 400.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -562,13 +525,13 @@ Status code is typically 409.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -588,13 +551,13 @@ is no longer available. Status code is typically 410.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>mixed</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>mixed</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -614,13 +577,13 @@ This might be due to some form of throttling or rate limiting. Status code is ty
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>string</em>) – The error message to show the user.</li>
-<li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
-<li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
+<li><strong>$description</strong> (<em>string</em>) &#8211; The error message to show the user.</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; A custom, API-specific, error code.</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; A custom &#8220;reason&#8221; message to return.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object’s send() method.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The value of the Response object&#8217;s send() method.</p>
 </td>
 </tr>
 </tbody>
@@ -643,22 +606,13 @@ This might be due to some form of throttling or rate limiting. Status code is ty
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="benchmark.html" class="btn btn-neutral float-right" title="Benchmarking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="Library Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -684,7 +638,7 @@ This might be due to some form of throttling or rate limiting. Status code is ty
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="Global Functions and Constants" href="common_functions.html"/>
@@ -123,7 +120,6 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -200,13 +196,13 @@
             
   <div class="section" id="events-extending-the-framework-core">
 <h1>Events - Extending the Framework Core<a class="headerlink" href="#events-extending-the-framework-core" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter’s Events feature provides a means to tap into and modify the inner workings of the framework without hacking
-core files. When CodeIgniter runs it follows a specific execution process. There may be instances, however, when you’d
+<p>CodeIgniter&#8217;s Events feature provides a means to tap into and modify the inner workings of the framework without hacking
+core files. When CodeIgniter runs it follows a specific execution process. There may be instances, however, when you&#8217;d
 like to cause some action to take place at a particular stage in the execution process. For example, you might want to run
 a script right before your controllers get loaded, or right after, or you might want to trigger one of your own scripts
 in some other location.</p>
 <p>Events work on a <em>publish/subscribe</em> pattern, where an event, is triggered at some point during the script execution.
-Other scripts can “subscribe” to that event by registering with the Events class to let it know they want to perform an
+Other scripts can &#8220;subscribe&#8221; to that event by registering with the Events class to let it know they want to perform an
 action when that event is triggered.</p>
 <div class="section" id="enabling-events">
 <h2>Enabling Events<a class="headerlink" href="#enabling-events" title="Permalink to this headline">¶</a></h2>
@@ -215,7 +211,7 @@ action when that event is triggered.</p>
 <div class="section" id="defining-an-event">
 <h2>Defining an Event<a class="headerlink" href="#defining-an-event" title="Permalink to this headline">¶</a></h2>
 <p>Most events are defined within the <strong>application/Config/Events.php</strong> file. You can subscribe an action to an event with
-the Events class’ <code class="docutils literal"><span class="pre">on()</span></code> method. The first parameter is the name of the event to subscribe to. The second parameter is
+the Events class&#8217; <code class="docutils literal"><span class="pre">on()</span></code> method. The first parameter is the name of the event to subscribe to. The second parameter is
 a callable that will be run when that event is triggered:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Events\Events</span><span class="p">;</span>
 
@@ -326,7 +322,7 @@ When <strong>true</strong>, all events will be skipped over during the trigger m
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -352,7 +348,7 @@ When <strong>true</strong>, all events will be skipped over during the trigger m
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

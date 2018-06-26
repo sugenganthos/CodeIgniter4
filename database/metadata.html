@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="Database Reference" href="index.html"/>
         <link rel="next" title="Custom Function Calls" href="call_function.html"/>
@@ -101,9 +98,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
-</ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Database Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
@@ -116,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Getting MetaData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model.html">Using CodeIgniter's Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html">Using CodeIgniter&#8217;s Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="entities.html">Using Entity Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">Database Migrations</a></li>
@@ -215,7 +209,7 @@ you are currently connected to. Example:</p>
 <div class="section" id="determine-if-a-table-exists">
 <h3>Determine If a Table Exists<a class="headerlink" href="#determine-if-a-table-exists" title="Permalink to this headline">¶</a></h3>
 <p><strong>$db-&gt;tableExists();</strong></p>
-<p>Sometimes it’s helpful to know whether a particular table exists before
+<p>Sometimes it&#8217;s helpful to know whether a particular table exists before
 running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">tableExists</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
 <span class="p">{</span>
@@ -260,7 +254,7 @@ calling the function from your query result object:</p>
 <div class="section" id="determine-if-a-field-is-present-in-a-table">
 <h3>Determine If a Field is Present in a Table<a class="headerlink" href="#determine-if-a-field-is-present-in-a-table" title="Permalink to this headline">¶</a></h3>
 <p><strong>$db-&gt;fieldExists()</strong></p>
-<p>Sometimes it’s helpful to know whether a particular field exists before
+<p>Sometimes it&#8217;s helpful to know whether a particular field exists before
 performing an action. Returns a boolean TRUE/FALSE. Usage example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">fieldExists</span><span class="p">(</span><span class="s1">&#39;field_name&#39;</span><span class="p">,</span> <span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
 <span class="p">{</span>
@@ -279,7 +273,7 @@ looking for.</p>
 <h3>Retrieve Field Metadata<a class="headerlink" href="#retrieve-field-metadata" title="Permalink to this headline">¶</a></h3>
 <p><strong>$db-&gt;getFieldData()</strong></p>
 <p>Returns an array of objects containing field information.</p>
-<p>Sometimes it’s helpful to gather the field names or other metadata, like
+<p>Sometimes it&#8217;s helpful to gather the field names or other metadata, like
 the column type, max length, etc.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -315,7 +309,7 @@ database:</p>
 <div class="section" id="list-the-indexes-in-a-table">
 <h3>List the Indexes in a Table<a class="headerlink" href="#list-the-indexes-in-a-table" title="Permalink to this headline">¶</a></h3>
 <p><strong>$db-&gt;getIndexData()</strong></p>
-<p>please write this, someone…</p>
+<p>please write this, someone...</p>
 </div>
 </div>
 </div>
@@ -343,7 +337,7 @@ database:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -369,7 +363,7 @@ database:</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

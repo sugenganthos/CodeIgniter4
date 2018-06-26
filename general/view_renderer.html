@@ -34,9 +34,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="General Topics" href="index.html"/>
         <link rel="next" title="View Parser" href="view_parser.html"/>
@@ -123,12 +120,8 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
@@ -219,13 +212,13 @@ can instantiate it directly:</p>
 <p class="first admonition-title">Important</p>
 <p class="last">You should create services only within controllers. If you need
 access to the View class from a library, you should set that as a dependency
-in your library’s constructor.</p>
+in your library&#8217;s constructor.</p>
 </div>
 <p>Then you can use any of the three standard methods that it provides:
 <strong>render(viewpath, options, save)</strong>, <strong>setVar(name, value, context)</strong> and <strong>setData(data, context)</strong>.</p>
 <div class="section" id="what-it-does">
 <h2>What It Does<a class="headerlink" href="#what-it-does" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">View</span></code> class processes conventional HTML/PHP scripts stored in the application’s view path,
+<p>The <code class="docutils literal"><span class="pre">View</span></code> class processes conventional HTML/PHP scripts stored in the application&#8217;s view path,
 after extracting view parameters into PHP variables, accessible inside the scripts.
 This means that your view parameter names need to be legal PHP variable names.</p>
 <p>The View class uses an associative array internally, to accumulate view parameters
@@ -251,7 +244,7 @@ number of different calls together in a chain:</p>
 <p>When you pass data to the <code class="docutils literal"><span class="pre">setVar()</span></code> and <code class="docutils literal"><span class="pre">setData()</span></code> functions you have the option to escape the data to protect
 against cross-site scripting attacks. As the last parameter in either method, you can pass the desired context to
 escape the data for. See below for context descriptions.</p>
-<p>If you don’t want the data to be escaped, you can pass <cite>null</cite> or <cite>raw</cite> as the final parameter to each function:</p>
+<p>If you don&#8217;t want the data to be escaped, you can pass <cite>null</cite> or <cite>raw</cite> as the final parameter to each function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$view</span><span class="o">-&gt;</span><span class="na">setVar</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="nv">$one</span><span class="p">,</span> <span class="s1">&#39;raw&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -266,7 +259,7 @@ context to escape the data for (see below):</p>
 <p>By default, the <code class="docutils literal"><span class="pre">esc()</span></code> and, in turn, the <code class="docutils literal"><span class="pre">setVar()</span></code> and <code class="docutils literal"><span class="pre">setData()</span></code> functions assume that the data you want to
 escape is intended to be used within standard HTML. However, if the data is intended for use in Javascript, CSS,
 or in an href attribute, you would need different escaping rules to be effective. You can pass in the name of the
-context as the second parameter. Valid contexts are ‘html’, ‘js’, ‘css’, ‘url’, and ‘attr’:</p>
+context as the second parameter. Valid contexts are &#8216;html&#8217;, &#8216;js&#8217;, &#8216;css&#8217;, &#8216;url&#8217;, and &#8216;attr&#8217;:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&lt;?= esc(</span><span class="si">$url</span><span class="s2">, &#39;url&#39;) ?&gt;&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">foo</span><span class="o">=</span><span class="s2">&quot;&lt;?= esc(</span><span class="si">$bar</span><span class="s2">, &#39;attr&#39;) ?&gt;&quot;</span><span class="o">&gt;</span><span class="nx">Some</span> <span class="nx">Link</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
 
 <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
@@ -286,7 +279,7 @@ context as the second parameter. Valid contexts are ‘html’, ‘js’, ‘css
 <h2>View Renderer Options<a class="headerlink" href="#view-renderer-options" title="Permalink to this headline">¶</a></h2>
 <p>Several options can be passed to the <code class="docutils literal"><span class="pre">render()</span></code> or <code class="docutils literal"><span class="pre">renderString()</span></code> methods:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">cache</span></code> - the time in seconds, to save a view’s results; ignored for renderString()</li>
+<li><code class="docutils literal"><span class="pre">cache</span></code> - the time in seconds, to save a view&#8217;s results; ignored for renderString()</li>
 <li><dl class="first docutils">
 <dt><code class="docutils literal"><span class="pre">cache_name</span></code> - the ID used to save/retrieve a cached view result; defaults to the viewpath;</dt>
 <dd>ignored for renderString()</dd>
@@ -307,9 +300,9 @@ context as the second parameter. Valid contexts are ‘html’, ‘js’, ‘css
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$view</strong> (<em>string</em>) – File name of the view source</li>
-<li><strong>$options</strong> (<em>array</em>) – Array of options, as key/value pairs</li>
-<li><strong>$saveData</strong> (<em>boolean</em>) – If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
+<li><strong>$view</strong> (<em>string</em>) &#8211; File name of the view source</li>
+<li><strong>$options</strong> (<em>array</em>) &#8211; Array of options, as key/value pairs</li>
+<li><strong>$saveData</strong> (<em>boolean</em>) &#8211; If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
 </ul>
 </td>
 </tr>
@@ -335,9 +328,9 @@ context as the second parameter. Valid contexts are ‘html’, ‘js’, ‘css
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$view</strong> (<em>string</em>) – Contents of the view to render, for instance content retrieved from a database</li>
-<li><strong>$options</strong> (<em>array</em>) – Array of options, as key/value pairs</li>
-<li><strong>$saveData</strong> (<em>boolean</em>) – If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
+<li><strong>$view</strong> (<em>string</em>) &#8211; Contents of the view to render, for instance content retrieved from a database</li>
+<li><strong>$options</strong> (<em>array</em>) &#8211; Array of options, as key/value pairs</li>
+<li><strong>$saveData</strong> (<em>boolean</em>) &#8211; If true, will save data for use with any other calls, if false, will clean the data after rendering the view.</li>
 </ul>
 </td>
 </tr>
@@ -367,8 +360,8 @@ appropriately!</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Array of view data strings, as key/value pairs</li>
-<li><strong>$context</strong> (<em>string</em>) – The context to use for data escaping.</li>
+<li><strong>$data</strong> (<em>array</em>) &#8211; Array of view data strings, as key/value pairs</li>
+<li><strong>$context</strong> (<em>string</em>) &#8211; The context to use for data escaping.</li>
 </ul>
 </td>
 </tr>
@@ -385,7 +378,7 @@ appropriately!</p>
 </pre></div>
 </div>
 <p>Supported escape contexts: html, css, js, url, or attr or raw.
-If ‘raw’, no escaping will happen.</p>
+If &#8216;raw&#8217;, no escaping will happen.</p>
 <p>Each call adds to the array of data that the object is accumulating,
 until the view is rendered.</p>
 </dd></dl>
@@ -398,9 +391,9 @@ until the view is rendered.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – Name of the view data variable</li>
-<li><strong>$value</strong> (<em>mixed</em>) – The value of this view data</li>
-<li><strong>$context</strong> (<em>string</em>) – The context to use for data escaping.</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; Name of the view data variable</li>
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; The value of this view data</li>
+<li><strong>$context</strong> (<em>string</em>) &#8211; The context to use for data escaping.</li>
 </ul>
 </td>
 </tr>
@@ -417,7 +410,7 @@ until the view is rendered.</p>
 </pre></div>
 </div>
 <p>Supported escape contexts: html, css, js, url, attr or raw.
-If ‘raw’, no escaping will happen.</p>
+If &#8216;raw&#8217;, no escaping will happen.</p>
 <p>If you use the a view data variable that you have previously used
 for this object, the new value will replace the existing one.</p>
 </dd></dl>
@@ -451,7 +444,7 @@ for this object, the new value will replace the existing one.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on May 11, 2018.
+      Last updated on Jun 25, 2018.
 
     </p>
   </div>
@@ -477,7 +470,7 @@ for this object, the new value will replace the existing one.</p>
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
-            SOURCELINK_SUFFIX: '.txt'
+            SOURCELINK_SUFFIX: ''
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
