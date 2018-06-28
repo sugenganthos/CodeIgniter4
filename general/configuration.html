@@ -124,10 +124,16 @@
 </li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a></li>
@@ -203,9 +209,19 @@ there is no single class that you need to use to access your settings. Instead, 
 create an instance of the class and all your settings are there for you.</p>
 <div class="section" id="accessing-config-files">
 <h2>Accessing Config Files<a class="headerlink" href="#accessing-config-files" title="Permalink to this headline">¶</a></h2>
-<p>You can access config files within your classes by creating a new instance. All of the properties
+<p>You can access config files within your classes by creating a new instance or using the config function. All of the properties
 are public, so you access the settings like any other property:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Config\EmailConfig</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Creating new class by hand</span>
+<span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Config\EmailConfig</span><span class="p">();</span>
+
+<span class="c1">// Creating new class with config function</span>
+<span class="nv">$config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">(</span> <span class="s1">&#39;EmailConfig&#39;</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+
+<span class="c1">// Get shared instance with config function</span>
+<span class="nv">$config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">(</span> <span class="s1">&#39;EmailConfig&#39;</span> <span class="p">);</span>
+
+<span class="c1">// Access config class with namespace</span>
+<span class="nv">$config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">(</span> <span class="s1">&#39;Config\\EmailConfig&#39;</span> <span class="p">);</span>
 
 <span class="c1">// Access settings as class properties</span>
 <span class="nv">$protocol</span> <span class="o">=</span> <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">protocol</span><span class="p">;</span>
@@ -418,7 +434,7 @@ by treating <cite>RegionalSalesModel</cite> as a &#8220;registrar&#8221;. The re
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 25, 2018.
+      Last updated on Jun 28, 2018.
 
     </p>
   </div>
