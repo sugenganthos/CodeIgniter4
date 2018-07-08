@@ -99,12 +99,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filesystem_helper.html">Filesystem Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">HTML Helper</a></li>
@@ -115,6 +119,9 @@
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a></li>
@@ -209,9 +216,9 @@ HTML.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$src</strong> (<em>string</em>) &#8211; Image source data</li>
+<li><strong>$src</strong> (<em>mixed</em>) &#8211; Image source data</li>
 <li><strong>$indexPage</strong> (<em>bool</em>) &#8211; Whether to treat $src as a routed URI string</li>
-<li><strong>$attributes</strong> (<em>array</em>) &#8211; HTML attributes</li>
+<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML attributes</li>
 </ul>
 </td>
 </tr>
@@ -237,7 +244,7 @@ Presumably, this would be if you were using a media controller:</p>
 <span class="c1">// &lt;img src=&quot;http://site.com/index.php/images/picture.jpg&quot; alt=&quot;&quot; /&gt;</span>
 </pre></div>
 </div>
-<p>Additionally, an associative array can be passed to the <code class="docutils literal"><span class="pre">img()</span></code> function
+<p>Additionally, an associative array can be passed as the first parameter,
 for complete control over all attributes and values. If an <em>alt</em> attribute
 is not provided, CodeIgniter will generate an empty string.</p>
 <p>Example:</p>
@@ -300,7 +307,7 @@ the page specified by <code class="docutils literal"><span class="pre">$config['
 <span class="c1">// &lt;link href=&quot;http://site.com/feed&quot; rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;My RSS Feed&quot; /&gt;</span>
 </pre></div>
 </div>
-<p>Additionally, an associative array can be passed to the <code class="docutils literal"><span class="pre">link()</span></code> function
+<p>Alternately, an associative array can be passed to the <code class="docutils literal"><span class="pre">link_tag()</span></code> function
 for complete control over all attributes and values:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$link</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;href&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;css/printer.css&#39;</span><span class="p">,</span>
@@ -323,7 +330,7 @@ for complete control over all attributes and values:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$src</strong> (<em>string</em>) &#8211; The source of JavaScript file</li>
+<li><strong>$src</strong> (<em>mixed</em>) &#8211; The source name of a JavaScript file</li>
 <li><strong>$indexPage</strong> (<em>bool</em>) &#8211; Whether to treat $src as a routed URI string</li>
 </ul>
 </td>
@@ -344,11 +351,7 @@ the page specified by <code class="docutils literal"><span class="pre">$config['
 <span class="c1">// &lt;script src=&quot;http://site.com/js/mystyles.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span>
 </pre></div>
 </div>
-<p>Further examples:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// to be done</span>
-</pre></div>
-</div>
-<p>Additionally, an associative array can be passed to the <code class="docutils literal"><span class="pre">script_tag()</span></code> function
+<p>Alternately, an associative array can be passed to the <code class="docutils literal"><span class="pre">script_tag()</span></code> function
 for complete control over all attributes and values:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$script</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;src&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;js/printer.js&#39;</span><span class="p">);</span>
 
@@ -611,7 +614,7 @@ source arrays. Example:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">HTML-formatted video element</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">HTML-formatted audio element</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
@@ -823,8 +826,8 @@ is used by default, but many doctypes are available.</p>
 <span class="c1">// &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</span>
 </pre></div>
 </div>
-<p>The following is a list of doctype choices. These are configurable, and
-pulled from application/config/doctypes.php</p>
+<p>The following is a list of the pre-defined doctype choices. These are configurable,
+pulled from <cite>application/Config/DocTypes.php</cite>, or they could be over-ridden in your <cite>.env</cite> configuration.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="16%" />
@@ -944,7 +947,7 @@ pulled from application/config/doctypes.php</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 25, 2018.
+      Last updated on Jul 07, 2018.
 
     </p>
   </div>
