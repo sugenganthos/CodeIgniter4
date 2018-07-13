@@ -124,10 +124,16 @@
 </li>
 </ul>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a></li>
@@ -209,17 +215,16 @@
 <li><a class="reference internal" href="#remapping-method-calls" id="id7">Remapping Method Calls</a></li>
 <li><a class="reference internal" href="#private-methods" id="id8">Private methods</a></li>
 <li><a class="reference internal" href="#organizing-your-controllers-into-sub-directories" id="id9">Organizing Your Controllers into Sub-directories</a></li>
-<li><a class="reference internal" href="#class-constructors" id="id10">Class Constructors</a></li>
-<li><a class="reference internal" href="#included-properties" id="id11">Included Properties</a><ul>
-<li><a class="reference internal" href="#request-object" id="id12">Request Object</a></li>
-<li><a class="reference internal" href="#response-object" id="id13">Response Object</a></li>
-<li><a class="reference internal" href="#logger-object" id="id14">Logger Object</a></li>
-<li><a class="reference internal" href="#forcehttps" id="id15">forceHTTPS</a></li>
-<li><a class="reference internal" href="#helpers" id="id16">helpers</a></li>
+<li><a class="reference internal" href="#included-properties" id="id10">Included Properties</a><ul>
+<li><a class="reference internal" href="#request-object" id="id11">Request Object</a></li>
+<li><a class="reference internal" href="#response-object" id="id12">Response Object</a></li>
+<li><a class="reference internal" href="#logger-object" id="id13">Logger Object</a></li>
+<li><a class="reference internal" href="#forcehttps" id="id14">forceHTTPS</a></li>
+<li><a class="reference internal" href="#helpers" id="id15">helpers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#validating-post-data" id="id17">Validating $_POST data</a></li>
-<li><a class="reference internal" href="#that-s-it" id="id18">That&#8217;s it!</a></li>
+<li><a class="reference internal" href="#validating-post-data" id="id16">Validating $_POST data</a></li>
+<li><a class="reference internal" href="#that-s-it" id="id17">That&#8217;s it!</a></li>
 </ul>
 </li>
 </ul>
@@ -447,54 +452,27 @@ in there that matches the name of your &#8216;default_controller&#8217; as speci
 your <em>application/Config/Routes.php</em> file.</p>
 <p>CodeIgniter also permits you to remap your URIs using its <a class="reference internal" href="routing.html"><span class="doc">URI Routing</span></a> feature.</p>
 </div>
-<div class="section" id="class-constructors">
-<h2><a class="toc-backref" href="#id10">Class Constructors</a><a class="headerlink" href="#class-constructors" title="Permalink to this headline">¶</a></h2>
-<p>If you intend to use a constructor in any of your Controllers, you
-<strong>MUST</strong> place the following line of code in it:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="o">...</span><span class="nv">$params</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The reason this line is necessary is because your local constructor will
-be overriding the one in the parent controller class so we need to
-manually call it.</p>
-<p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
-<span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="o">...</span><span class="nv">$params</span><span class="p">)</span>
-        <span class="p">{</span>
-                <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="o">...</span><span class="nv">$params</span><span class="p">);</span>
-
-                <span class="c1">// Your own constructor code</span>
-        <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Constructors are useful if you need to set some default values, or run a
-default process when your class is instantiated. Constructors can&#8217;t
-return a value, but they can do some default work.</p>
-</div>
 <div class="section" id="included-properties">
-<h2><a class="toc-backref" href="#id11">Included Properties</a><a class="headerlink" href="#included-properties" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Included Properties</a><a class="headerlink" href="#included-properties" title="Permalink to this headline">¶</a></h2>
 <p>Every controller you create should extend <code class="docutils literal"><span class="pre">CodeIgniter\Controller</span></code> class.
 This class provides several features that are available to all of your controllers.</p>
 <div class="section" id="request-object">
-<h3><a class="toc-backref" href="#id12">Request Object</a><a class="headerlink" href="#request-object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Request Object</a><a class="headerlink" href="#request-object" title="Permalink to this headline">¶</a></h3>
 <p>The application&#8217;s main <a class="reference internal" href="../libraries/request.html"><span class="doc">Request Instance</span></a> is always available
 as a class property, <code class="docutils literal"><span class="pre">$this-&gt;request</span></code>.</p>
 </div>
 <div class="section" id="response-object">
-<h3><a class="toc-backref" href="#id13">Response Object</a><a class="headerlink" href="#response-object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Response Object</a><a class="headerlink" href="#response-object" title="Permalink to this headline">¶</a></h3>
 <p>The application&#8217;s main <a class="reference internal" href="../libraries/response.html"><span class="doc">Response Instance</span></a> is always available
 as a class property, <code class="docutils literal"><span class="pre">$this-&gt;response</span></code>.</p>
 </div>
 <div class="section" id="logger-object">
-<h3><a class="toc-backref" href="#id14">Logger Object</a><a class="headerlink" href="#logger-object" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Logger Object</a><a class="headerlink" href="#logger-object" title="Permalink to this headline">¶</a></h3>
 <p>An instance of the <a class="reference internal" href="logging.html"><span class="doc">Logger</span></a> class is available as a class property,
 <code class="docutils literal"><span class="pre">$this-&gt;logger</span></code>.</p>
 </div>
 <div class="section" id="forcehttps">
-<h3><a class="toc-backref" href="#id15">forceHTTPS</a><a class="headerlink" href="#forcehttps" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">forceHTTPS</a><a class="headerlink" href="#forcehttps" title="Permalink to this headline">¶</a></h3>
 <p>A convenience method for forcing a method to be accessed via HTTPS is available within all
 controllers:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">isSecure</span><span class="p">())</span>
@@ -518,7 +496,7 @@ modify this by passing the duration (in seconds) as the first parameter:</p>
 </div>
 </div>
 <div class="section" id="helpers">
-<h3><a class="toc-backref" href="#id16">helpers</a><a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">helpers</a><a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h3>
 <p>You can define an array of helper files as a class property. Whenever the controller is loaded,
 these helper files will be automatically loaded into memory so that you can use their methods anywhere
 inside the controller:</p>
@@ -531,7 +509,7 @@ inside the controller:</p>
 </div>
 </div>
 <div class="section" id="validating-post-data">
-<h2><a class="toc-backref" href="#id17">Validating $_POST data</a><a class="headerlink" href="#validating-post-data" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Validating $_POST data</a><a class="headerlink" href="#validating-post-data" title="Permalink to this headline">¶</a></h2>
 <p>The controller also provides a convenience method to make validating $_POST data a little simpler, <code class="docutils literal"><span class="pre">validate()</span></code> that
 takes an array of rules to test against as the first parameter, and, optionally,
 an array of custom error messages to display if the items don&#8217;t pass. Internally, this uses the controller&#8217;s
@@ -575,7 +553,7 @@ and you will find that some situations are simpler in the controller than then m
 </div>
 </div>
 <div class="section" id="that-s-it">
-<h2><a class="toc-backref" href="#id18">That&#8217;s it!</a><a class="headerlink" href="#that-s-it" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">That&#8217;s it!</a><a class="headerlink" href="#that-s-it" title="Permalink to this headline">¶</a></h2>
 <p>That, in a nutshell, is all there is to know about controllers.</p>
 </div>
 </div>
@@ -603,7 +581,7 @@ and you will find that some situations are simpler in the controller than then m
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 25, 2018.
+      Last updated on Jul 12, 2018.
 
     </p>
   </div>
