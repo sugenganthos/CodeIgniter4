@@ -98,6 +98,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
+</ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Database Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
@@ -121,6 +124,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a></li>
@@ -374,19 +380,8 @@ of just one:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
 </pre></div>
 </div>
-<p><strong>findWhere()</strong></p>
-<p>Allows you to specify one or more criteria that must be matched against the data. Returns
-all rows that match:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Use simple where</span>
-<span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">findWhere</span><span class="p">(</span><span class="s1">&#39;role_id &gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">);</span>
-
-<span class="c1">// Use array of where values</span>
-<span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">findWhere</span><span class="p">([</span>
-        <span class="s1">&#39;status&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;active&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;deleted&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span>
-<span class="p">]);</span>
-</pre></div>
-</div>
+<p>If no parameters are passed in, will return all rows in that model&#8217;s table, effectively acting
+like findAll(), though less explicit.</p>
 <p><strong>findAll()</strong></p>
 <p>Returns all results:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
@@ -451,6 +446,22 @@ of the columns in $table, while the array&#8217;s values are the values to save 
 <span class="p">];</span>
 
 <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Multiple records may be updated with a single call by passing an array of primary keys as the first parameter:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+    <span class="p">];</span>
+
+    <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="nv">$data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>When you need a more flexible solution, you can leaven the parameters empty and it functions like the Query Builder&#8217;s
+update command, with the added benefit of validation, events, etc:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$userModel</span>
+    <span class="o">-&gt;</span><span class="na">whereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+    <span class="o">-&gt;</span><span class="na">set</span><span class="p">([</span><span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="o">-&gt;</span><span class="na">update</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>save()</strong></p>
@@ -548,20 +559,15 @@ that provides several handy features that make developing Entities simpler.</p>
 </div>
 <p>If the model&#8217;s $useSoftDeletes value is true, this will update the row to set &#8216;deleted = 1&#8217;. You can force
 a permanent delete by setting the second parameter as true.</p>
-<p><strong>deleteWhere()</strong></p>
-<p>Deletes multiple records from the model&#8217;s table based on the criteria pass into the first two parameters.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Simple where</span>
-<span class="nv">$userMdoel</span><span class="o">-&gt;</span><span class="na">deleteWhere</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;inactive&#39;</span><span class="p">);</span>
-
-<span class="c1">// Complex where</span>
-<span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">deleteWhere</span><span class="p">([</span>
-        <span class="s1">&#39;status&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;inactive&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;warn_lvl &gt;=&#39;</span> <span class="o">=&gt;</span> <span class="mi">50</span>
-<span class="p">]);</span>
+<p>An array of primary keys can be passed in as the first parameter to delete multiple records at once:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
 </pre></div>
 </div>
-<p>If the model&#8217;s $useSoftDeletes value is true, this will update the rows to set &#8216;deleted = 1&#8217;. You can force
-a permanent delete by setting the third parameter as true.</p>
+<p>If no parameters are passed in, will act like the Query Builder&#8217;s delete method, requiring a where call
+previously:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">();</span>
+</pre></div>
+</div>
 <p><strong>purgeDeleted()</strong></p>
 <p>Cleans out the database table by permanently removing all rows that have &#8216;deleted = 1&#8217;.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">purgeDeleted</span><span class="p">();</span>
@@ -701,16 +707,16 @@ it is reset to its default value.</p>
 </div>
 <p><strong>asArray()</strong></p>
 <p>Returns data from the next find*() method as associative arrays:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">asArray</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findWhere</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">asArray</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>asObject()</strong></p>
 <p>Returns data from the next find*() method as standard objects or custom class intances:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Return as standard objects</span>
-<span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">asObject</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">findWhere</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">);</span>
+<span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">asObject</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 
 <span class="c1">// Return as custom class instances</span>
-<span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">asObject</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findWhere</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">);</span>
+<span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">asObject</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -810,12 +816,6 @@ insert method, it is first converted to an array.</td>
 <strong>data</strong> = The resulting row of data, or null if no result found.</td>
 </tr>
 <tr class="row-even"><td><ul class="first last simple">
-<li>findWhere()</li>
-</ul>
-</td>
-<td><strong>data</strong> = the resulting rows of data, or null if no result found.</td>
-</tr>
-<tr class="row-odd"><td><ul class="first last simple">
 <li>findAll()</li>
 </ul>
 </td>
@@ -823,27 +823,20 @@ insert method, it is first converted to an array.</td>
 <strong>limit</strong> = the number of rows to find.
 <strong>offset</strong> = the number of rows to skip during the search.</td>
 </tr>
-<tr class="row-even"><td><ul class="first last simple">
+<tr class="row-odd"><td><ul class="first last simple">
 <li>first()</li>
 </ul>
 </td>
 <td><strong>data</strong> = the resulting row found during the search, or null if none found.</td>
 </tr>
-<tr class="row-odd"><td>beforeDelete</td>
+<tr class="row-even"><td>beforeDelete</td>
 <td>Varies by delete* method. See the following:</td>
 </tr>
-<tr class="row-even"><td><ul class="first last simple">
+<tr class="row-odd"><td><ul class="first last simple">
 <li>delete()</li>
 </ul>
 </td>
 <td><strong>id</strong> = primary key of row being deleted.
-<strong>purge</strong> = boolean whether soft-delete rows should be hard deleted.</td>
-</tr>
-<tr class="row-odd"><td><ul class="first last simple">
-<li>deleteWhere()</li>
-</ul>
-</td>
-<td><strong>key</strong>/<strong>value</strong> = the key/value pair used to search for rows to delete.
 <strong>purge</strong> = boolean whether soft-delete rows should be hard deleted.</td>
 </tr>
 <tr class="row-even"><td>afterDelete</td>
@@ -855,15 +848,6 @@ insert method, it is first converted to an array.</td>
 </td>
 <td><strong>id</strong> = primary key of row being deleted.
 <strong>purge</strong> = boolean whether soft-delete rows should be hard deleted.
-<strong>result</strong> = the result of the delete() call on the Query Builder.
-<strong>data</strong> = unused.</td>
-</tr>
-<tr class="row-even"><td><ul class="first last simple">
-<li>deleteWhere()</li>
-</ul>
-</td>
-<td><strong>key</strong>/<strong>value</strong> = the key/value pair used to search for rows to delete.
-<strong>purge</strong> boolean whether soft-delete rows should be hard deleted.
 <strong>result</strong> = the result of the delete() call on the Query Builder.
 <strong>data</strong> = unused.</td>
 </tr>
@@ -896,7 +880,7 @@ insert method, it is first converted to an array.</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jun 25, 2018.
+      Last updated on Jul 16, 2018.
 
     </p>
   </div>
