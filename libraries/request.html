@@ -215,7 +215,7 @@ from the Request class to add specific functionality.</p>
 <h2>Class Reference<a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt>
-<code class="descname">CodeIgniter\HTTP\IncomingRequest</code></dt>
+<code class="descname">CodeIgniter\HTTP\Request</code></dt>
 <dd><dl class="method">
 <dt id="getIPAddress">
 <code class="descname">getIPAddress</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getIPAddress" title="Permalink to this definition">¶</a></dt>
@@ -237,7 +237,7 @@ will return &#8216;0.0.0.0&#8217;:</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">This method takes into account the <code class="docutils literal"><span class="pre">App-&gt;proxy_ips</span></code> setting and will
+<p class="last">This method takes into account the <code class="docutils literal"><span class="pre">App-&gt;proxyIPs</span></code> setting and will
 return the reported HTTP_X_FORWARDED_FOR, HTTP_CLIENT_IP, HTTP_X_CLIENT_IP, or
 HTTP_X_CLUSTER_CLIENT_IP address for the allowed IP address.</p>
 </div>
@@ -285,8 +285,8 @@ an IP format. The default checks for both formats.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="method">
-<code class="descname">method</code><span class="sig-paren">(</span><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#method" title="Permalink to this definition">¶</a></dt>
+<dt id="getMethod">
+<code class="descname">getMethod</code><span class="sig-paren">(</span><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getMethod" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -306,9 +306,9 @@ an IP format. The default checks for both formats.</p>
 </table>
 <p>Returns the <code class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></code>, with the option to set it
 in uppercase or lowercase.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Outputs: POST</span>
-<span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span> <span class="c1">// Outputs: post</span>
-<span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">();</span> <span class="c1">// Outputs: post</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Outputs: POST</span>
+<span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span> <span class="c1">// Outputs: post</span>
+<span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">();</span> <span class="c1">// Outputs: post</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -376,7 +376,7 @@ as an array.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Jul 16, 2018.
+      Last updated on Jul 24, 2018.
 
     </p>
   </div>
